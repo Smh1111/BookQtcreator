@@ -30,6 +30,11 @@ SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
     setCentralWidget(centralWidget);
 
 
+
+
+
+
+
 }
 
 
