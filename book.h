@@ -18,6 +18,7 @@ public:
     const QStringList& getAuthors() const;
     const QString& getPublishedDate() const;
     int getPageCount() const;
+    QString getImageUrl();
 
 private:
 

@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "book.h"
-
+#include <QGroupBox>
 namespace Ui {
 class SearchResultWindow;
 }
@@ -23,6 +23,8 @@ public:
     }
     void handleBookButtonClick(const Book &book);
     void openBookDetailsWindow(const Book &book);
+    QGroupBox* createBookGroupBox(const Book& book);
+    QPixmap loadImageFromUrl(const QString& imageUrl);
 
 private slots:
     void on_pushButton_clicked();
