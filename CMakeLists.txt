@@ -28,6 +28,8 @@ set(PROJECT_SOURCES
         searchresultwindow.cpp
         searchresultwindow.h
         searchresultwindow.ui
+        bookdetailswindow.h
+        bookdetailswindow.cpp
 
         #test/testings.h
         #test/testings.cpp

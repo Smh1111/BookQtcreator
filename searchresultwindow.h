@@ -22,6 +22,7 @@ public:
         qDebug() << "Data in search result window" << bookdata.data();
     }
     void handleBookButtonClick(const Book &book);
+    void openBookDetailsWindow(const Book &book);
 
 private slots:
     void on_pushButton_clicked();

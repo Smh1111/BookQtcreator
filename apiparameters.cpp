@@ -16,7 +16,7 @@ void ApiParameters::setQuery(const QString& query)
     qDebug() << "Query in api param = " << query;
     urlQuery.clear();
     urlQuery.addQueryItem("q", query);
-    urlQuery.addQueryItem("maxResults", "4");
+    urlQuery.addQueryItem("maxResults", "20");
 
 
 
