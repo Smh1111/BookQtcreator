@@ -12,16 +12,29 @@ SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
     ui->setupUi(this);
 
     this->setWindowTitle("Book Finder App");
-    QHBoxLayout *hbox = new QHBoxLayout(this);
+    QHBoxLayout *hbox = new QHBoxLayout;
 
-    QPushButton *pushBut1 = new QPushButton(this);
-    pushBut1->setText(bookdata.takeAt(0).getTitle());
-    pushBut1->adjustSize();
-    hbox->addWidget(pushBut1);
+    foreach (const Book &book, bookdata) {
+        QPushButton *pushButton = new QPushButton(this);
+        pushButton->setText(book.getTitle());
+        pushButton->adjustSize();
+        hbox->addWidget(pushButton);
 
-    ui->frame_2->setLineWidth(12);
+        connect(pushButton, &QPushButton::clicked, [this, book]() {
+            handleBookButtonClick(book);
+        });
+    }
+
+    QWidget *centralWidget = new QWidget(this);
+    centralWidget->setLayout(hbox);
+    setCentralWidget(centralWidget);
+
+}
 
 
+void SearchResultWindow::handleBookButtonClick(const Book &book)
+{
+    // Handle the book button click here
 }
 SearchResultWindow::~SearchResultWindow()
 {
