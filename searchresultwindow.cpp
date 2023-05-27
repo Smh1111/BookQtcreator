@@ -9,7 +9,7 @@ SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
     ui(new Ui::SearchResultWindow)
 {
     bookdata = data;
-    ui->setupUi(this);
+    //ui->setupUi(this);
 
     this->setWindowTitle("Book Finder App");
     QHBoxLayout *hbox = new QHBoxLayout;
@@ -28,6 +28,7 @@ SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
     QWidget *centralWidget = new QWidget(this);
     centralWidget->setLayout(hbox);
     setCentralWidget(centralWidget);
+
 
 }
 
