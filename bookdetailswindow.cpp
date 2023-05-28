@@ -48,17 +48,27 @@ BookDetailsWindow::BookDetailsWindow(const Book &book, QWidget *parent) : QWidge
     QLabel *isbnLabel = new QLabel("ISBN:", this);
     QLabel *authorsLabel = new QLabel("Authors:", this);
     QLabel *dateLabel = new QLabel("Published Date:", this);
+    QLabel *linkLabel = new QLabel("More Info", this);
 
     QLabel *titleValueLabel = new QLabel(book.getTitle(), this);
     QLabel *isbnValueLabel = new QLabel(book.getTitle(), this);
     QLabel *authorsValueLabel = new QLabel(book.getAuthors().join(", "), this);
     QLabel *dateValueLabel = new QLabel(book.getPublishedDate(), this);
 
+    // Create the link label
+    QLabel *linkValueLabel = new QLabel("<a href=\"" + book.getImageUrl() + "\">Link</a>");
+
+    linkValueLabel->setTextFormat(Qt::RichText);
+    linkValueLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
+    linkValueLabel->setOpenExternalLinks(true);
+
     layout->addRow(imageLabel);
     layout->addRow(titleLabel, titleValueLabel);
     layout->addRow(isbnLabel, isbnValueLabel);
     layout->addRow(authorsLabel, authorsValueLabel);
     layout->addRow(dateLabel, dateValueLabel);
+    layout->addRow(linkLabel, linkValueLabel);
+
 
     titleValueLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     isbnValueLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);

@@ -19,7 +19,7 @@ void ApiParameters::setQuery(const QString& query)
     urlQuery.addQueryItem("maxResults", "5");
 
 
-
+    urlQuery.addQueryItem("orderBy", "newest");
 
     auto apiKey = "AIzaSyBEu08wHao57QatWkgO4DmyhLX00CRYQag";
     urlQuery.addQueryItem("key", apiKey);

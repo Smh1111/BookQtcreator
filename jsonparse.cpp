@@ -17,9 +17,14 @@ void JsonParse::populateData(const QJsonArray& jsonArray)
 
             // Set values from the bookObject to the Book object
             QJsonObject volumeInfo = bookObject.value("volumeInfo").toObject();
+
+            // set Title
             book.setTitle(volumeInfo.value("title").toString());
+
+            // set Description
             book.setDescription(volumeInfo.value("description").toString());
 
+            // set Authors
             // Handle authors array
             QJsonArray authorsArray = volumeInfo.value("authors").toArray();
             QStringList authors;
@@ -28,8 +33,16 @@ void JsonParse::populateData(const QJsonArray& jsonArray)
             }
             book.setAuthors(authors);
 
+            // set PublishedDate
             book.setPublishedDate(volumeInfo.value("publishedDate").toString());
+
+            // set PageCount
             book.setPageCount(volumeInfo.value("pageCount").toInt());
+
+            // set ImageLists
+
+
+            // set infoLink
 
             // Add the book to the bookList
             bookList.append(book);

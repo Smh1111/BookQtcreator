@@ -25,9 +25,10 @@ public:
     void openBookDetailsWindow(const Book &book);
     QGroupBox* createBookGroupBox(const Book& book);
     QPixmap loadImageFromUrl(const QString& imageUrl);
+    QWidget *createBookCard(const Book &book);
 
 private slots:
-    void on_pushButton_clicked();
+    void goToHomePage();
 
 private:
     Ui::SearchResultWindow *ui;

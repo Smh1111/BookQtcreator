@@ -45,7 +45,7 @@ int Book::getPageCount() const
     return this->pageCount;
 }
 
-QString Book::getImageUrl()
+QString Book::getImageUrl() const
 {
 
     return "https://books.google.com/books/content?id=OBM3AAAAIAAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE732jTQFFCRvT_lRHXs2zLcWjeEBEN95EXuYKFhEQbWEdPPvKDcy0fDnXdUWUP2CofuU_hJfwq-AzrCIfA0UkanyP3cEVuzgdeiuhh4of1ke2-PRjRPiVv4xg0JP0RSit4ki-mO2&source=gbs_api";

@@ -14,6 +14,7 @@ HomePage::HomePage(QWidget *parent)
     QIcon icon("../BookApp/icons8-book-64.ico");  // Replace with the actual path to your icon file
     setWindowIcon(icon);
 
+
     connect(ui->pushButtonSearch, &QPushButton::clicked, this, &HomePage::handleButtonClicked);
 
 
