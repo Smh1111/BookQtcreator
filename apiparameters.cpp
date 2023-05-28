@@ -11,12 +11,14 @@ ApiParameters::ApiParameters(QObject *parent) : QObject(parent)
  *
  *
  */
-void ApiParameters::setQuery(const QString& query)
+
+
+void ApiParameters::setQuery(const QString& query, int maxResult)
 {
     qDebug() << "Query in api param = " << query;
     urlQuery.clear();
     urlQuery.addQueryItem("q", query);
-    urlQuery.addQueryItem("maxResults", "5");
+    urlQuery.addQueryItem("maxResults", QString::number(maxResult));
 
 
     urlQuery.addQueryItem("orderBy", "newest");

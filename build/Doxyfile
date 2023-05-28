@@ -1,0 +1,6 @@
+PROJECT_NAME           = "BookApp"
+PROJECT_NUMBER         = "0.1"
+OUTPUT_DIRECTORY       = D:/BookApp/build/docs
+INPUT                  = D:/BookApp
+
+# Additional configuration options can be added as needed

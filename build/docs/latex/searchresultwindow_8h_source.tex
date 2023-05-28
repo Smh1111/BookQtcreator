@@ -1,0 +1,44 @@
+\hypertarget{searchresultwindow_8h_source}{}\doxysection{D\+:/\+Book\+App/searchresultwindow.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SEARCHRESULTWINDOW\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SEARCHRESULTWINDOW\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QMainWindow>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}book.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QGroupBox>}}
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }Ui \{}
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_search_result_window}{SearchResultWindow}};}
+\DoxyCodeLine{9 \}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_search_result_window}{SearchResultWindow}} : \textcolor{keyword}{public} QMainWindow}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     Q\_OBJECT}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \textcolor{comment}{//explicit SearchResultWindow(QWidget *parent = nullptr);}}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_search_result_window}{SearchResultWindow}}(QWidget *parent = \textcolor{keyword}{nullptr}, QList<Book> data = QList<Book>());}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \mbox{\hyperlink{class_search_result_window}{\string~SearchResultWindow}}();}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} getData()\{}
+\DoxyCodeLine{22         qDebug() << \textcolor{stringliteral}{"{}Data in search result window"{}} << bookdata.data();}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} handleBookButtonClick(\textcolor{keyword}{const} \mbox{\hyperlink{class_book}{Book}} \&book);}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} openBookDetailsWindow(\textcolor{keyword}{const} \mbox{\hyperlink{class_book}{Book}} \&book);}
+\DoxyCodeLine{26     QGroupBox* createBookGroupBox(\textcolor{keyword}{const} \mbox{\hyperlink{class_book}{Book}}\& book);}
+\DoxyCodeLine{27     QPixmap loadImageFromUrl(\textcolor{keyword}{const} QString\& imageUrl);}
+\DoxyCodeLine{28     QWidget *createBookCard(\textcolor{keyword}{const} \mbox{\hyperlink{class_book}{Book}} \&book);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} goToHomePage();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{private}:}
+\DoxyCodeLine{34     Ui::SearchResultWindow *ui;}
+\DoxyCodeLine{35     QList<Book> bookdata;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SEARCHRESULTWINDOW\_H}}
+
+\end{DoxyCode}

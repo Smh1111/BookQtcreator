@@ -32,7 +32,7 @@ BookDetailsWindow::BookDetailsWindow(const Book &book, QWidget *parent) : QWidge
     QLabel *imageLabel = new QLabel(this);
     QPixmap bookImage;
 
-    QString imageUrl = "https://books.google.com/books/content?id=OBM3AAAAIAAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE732jTQFFCRvT_lRHXs2zLcWjeEBEN95EXuYKFhEQbWEdPPvKDcy0fDnXdUWUP2CofuU_hJfwq-AzrCIfA0UkanyP3cEVuzgdeiuhh4of1ke2-PRjRPiVv4xg0JP0RSit4ki-mO2&source=gbs_api";
+    QString imageUrl = book.getImageUrl();
     if (!imageUrl.isEmpty()) {
         bookImage.loadFromData(downloadImageData(imageUrl));
     }
@@ -41,39 +41,58 @@ BookDetailsWindow::BookDetailsWindow(const Book &book, QWidget *parent) : QWidge
         imageLabel->setAlignment(Qt::AlignCenter);
     } else {
         imageLabel->setPixmap(bookImage.scaledToHeight(300));
+        //imageLabel->setPixmap(bookImage.scaledToWidth(300));
         imageLabel->setAlignment(Qt::AlignHCenter);
     }
 
     QLabel *titleLabel = new QLabel("Title:", this);
     QLabel *isbnLabel = new QLabel("ISBN:", this);
+    //QLabel *pageCountLabel = new QLabel("Page Count:", this);
     QLabel *authorsLabel = new QLabel("Authors:", this);
     QLabel *dateLabel = new QLabel("Published Date:", this);
-    QLabel *linkLabel = new QLabel("More Info", this);
+    QLabel *descriptionLabel = new QLabel("Description:", this);
+
 
     QLabel *titleValueLabel = new QLabel(book.getTitle(), this);
-    QLabel *isbnValueLabel = new QLabel(book.getTitle(), this);
+    QLabel *isbnValueLabel = new QLabel(book.getISBN(), this);
     QLabel *authorsValueLabel = new QLabel(book.getAuthors().join(", "), this);
     QLabel *dateValueLabel = new QLabel(book.getPublishedDate(), this);
+    QLabel *pageCountValueLabel = new QLabel(QString::number(book.getPageCount())+" Pages", this);
+    pageCountValueLabel->setAlignment(Qt::AlignHCenter);
+
+
+    //Display Description
+    QTextEdit *descriptionValueTextEdit = new QTextEdit(book.getDescription(), this);
+    descriptionValueTextEdit->setReadOnly(true);
+    descriptionValueTextEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    descriptionValueTextEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+
 
     // Create the link label
-    QLabel *linkValueLabel = new QLabel("<a href=\"" + book.getImageUrl() + "\">Link</a>");
+    QLabel *infoLinkValueLabel = new QLabel("<a href=\"" + book.getInfoLink() + "\">More Info</a>");
 
-    linkValueLabel->setTextFormat(Qt::RichText);
-    linkValueLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
-    linkValueLabel->setOpenExternalLinks(true);
+    infoLinkValueLabel->setTextFormat(Qt::RichText);
+    infoLinkValueLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
+    infoLinkValueLabel->setOpenExternalLinks(true);
+
+
 
     layout->addRow(imageLabel);
+    layout->addRow(pageCountValueLabel);
     layout->addRow(titleLabel, titleValueLabel);
     layout->addRow(isbnLabel, isbnValueLabel);
     layout->addRow(authorsLabel, authorsValueLabel);
+
     layout->addRow(dateLabel, dateValueLabel);
-    layout->addRow(linkLabel, linkValueLabel);
+    layout->addRow(descriptionLabel, descriptionValueTextEdit);
+    layout->addRow(infoLinkValueLabel);
 
 
     titleValueLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     isbnValueLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     authorsValueLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     dateValueLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+
 
     adjustSize();
     setFixedWidth(qMin(600, width()));

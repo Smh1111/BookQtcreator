@@ -6,9 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>835</width>
-    <height>474</height>
+    <width>850</width>
+    <height>470</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>850</width>
+    <height>470</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>850</width>
+    <height>470</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>HomePage</string>
@@ -28,6 +46,7 @@
     </property>
     <property name="font">
      <font>
+      <family>Segoe UI</family>
       <pointsize>-1</pointsize>
       <bold>true</bold>
      </font>
@@ -58,67 +77,6 @@ border-radius: 8px;
 
 
 </string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>-260</x>
-      <y>-130</y>
-      <width>1341</width>
-      <height>741</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton
-{
-	background-color: red;
-	color: white;
-}
-
-QLineEdit
-{
-	background-color: lightblue;
-	color: black;
-}
-QLabel
-{
-	background-image:url(D:/BookApp/images/bgFour.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-	color: white;
-	
-}
-
-QPushButton {
-    border: 1px solid black;
-	border-radius: 5px;
-}
-
-label_2
-{
-	color: red;
-	font-size: 14px;
-}
-
-label_3
-{
-	color: white;
-}
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::PlainText</enum>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -167,11 +125,179 @@ label_3
      <string>BOOK FINDER</string>
     </property>
    </widget>
-   <zorder>label</zorder>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>260</y>
+      <width>480</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QRadioButton" name="radioButton_5">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;</string>
+       </property>
+       <property name="text">
+        <string>5</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton_10">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;</string>
+       </property>
+       <property name="text">
+        <string>10</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton_20">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;</string>
+       </property>
+       <property name="text">
+        <string>20</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton_30">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;</string>
+       </property>
+       <property name="text">
+        <string>30</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton_40">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;</string>
+       </property>
+       <property name="text">
+        <string>40</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
    <zorder>pushButtonSearch</zorder>
    <zorder>lineEditQuery</zorder>
    <zorder>label_3</zorder>
    <zorder>label_2</zorder>
+   <zorder>radioButton_5</zorder>
+   <zorder>radioButton_10</zorder>
+   <zorder>horizontalSpacer</zorder>
+   <zorder>horizontalSpacer_2</zorder>
+   <zorder>radioButton_20</zorder>
+   <zorder>horizontalSpacer_3</zorder>
+   <zorder>radioButton_30</zorder>
+   <zorder>horizontalSpacer_4</zorder>
+   <zorder>radioButton_40</zorder>
+   <zorder>horizontalSpacer_5</zorder>
+   <zorder>horizontalSpacer_6</zorder>
+   <zorder>radioButton_5</zorder>
+   <zorder>horizontalSpacer</zorder>
+   <zorder>radioButton_10</zorder>
+   <zorder>horizontalSpacer_2</zorder>
+   <zorder>radioButton_20</zorder>
+   <zorder>horizontalSpacer_3</zorder>
+   <zorder>radioButton_30</zorder>
+   <zorder>horizontalSpacer_4</zorder>
+   <zorder>radioButton_40</zorder>
   </widget>
  </widget>
  <resources/>

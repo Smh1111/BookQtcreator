@@ -1,0 +1,6 @@
+PROJECT_NAME           = "BookApp"
+PROJECT_NUMBER         = "0.1"
+OUTPUT_DIRECTORY       = @DOXYGEN_OUTPUT_DIR@
+INPUT                  = @DOXYGEN_INPUT_DIR@
+
+# Additional configuration options can be added as needed

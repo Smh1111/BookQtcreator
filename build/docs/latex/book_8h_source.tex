@@ -1,0 +1,68 @@
+\hypertarget{book_8h_source}{}\doxysection{D\+:/\+Book\+App/book.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef BOOK\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define BOOK\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QString>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QStringList>}}
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_book}{Book}} \{}
+\DoxyCodeLine{11 \textcolor{keyword}{public}:}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_book}{Book}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{comment}{// Title}}
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} setTitle           (QString        Title);}
+\DoxyCodeLine{21     \textcolor{keyword}{const} QString\& \mbox{\hyperlink{class_book_ac9ac170b1fdd039c52a5c3bbb476cf9a}{getTitle}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{comment}{// ISBN}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} setISBN            (QStringList\&    isbn);}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} setDescription     (QString        description);}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} setAuthors         (QStringList\&   authors);}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} setPublishedDate   (QString        publishedDate);}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} setPageCount       (\textcolor{keywordtype}{int}            pageCount);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} setImageLinks      (QStringList\&       imageLinks);}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} setInfoLink        (QString        infoLink);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} setPreviewLink     (QString        previewLink);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keyword}{const} QStringList\& getISBNList() \textcolor{keyword}{const};}
+\DoxyCodeLine{39     QString getISBN()   \textcolor{keyword}{const};}
+\DoxyCodeLine{40     \textcolor{keyword}{const} QString\& getDescription() \textcolor{keyword}{const};}
+\DoxyCodeLine{41     \textcolor{keyword}{const} QStringList\& getAuthors() \textcolor{keyword}{const};}
+\DoxyCodeLine{42     \textcolor{keyword}{const} QString\& getPublishedDate() \textcolor{keyword}{const};}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} getPageCount() \textcolor{keyword}{const};}
+\DoxyCodeLine{44     \textcolor{keyword}{const} QStringList\& getImageLinks() \textcolor{keyword}{const};}
+\DoxyCodeLine{45     \textcolor{keyword}{const} QString\& getInfoLink() \textcolor{keyword}{const};}
+\DoxyCodeLine{46     \textcolor{keyword}{const} QString\& getPreviewLink() \textcolor{keyword}{const};}
+\DoxyCodeLine{47     QString getInformationLink() \textcolor{keyword}{const};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     QString getImageUrl() \textcolor{keyword}{const};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{private}:}
+\DoxyCodeLine{53     \textcolor{comment}{// Book collections}}
+\DoxyCodeLine{54     QString         title           ;}
+\DoxyCodeLine{55     QStringList        isbn         ;}
+\DoxyCodeLine{56     QStringList     authors         ;}
+\DoxyCodeLine{57     QString         publishedDate   ;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{comment}{// For Book Details}}
+\DoxyCodeLine{61     QString         description     ;}
+\DoxyCodeLine{62     QStringList     imageList       ;}
+\DoxyCodeLine{63     QString         infoLink        ;}
+\DoxyCodeLine{64     \textcolor{keywordtype}{int}             pageCount       ;}
+\DoxyCodeLine{65     QString         previewLink     ;}
+\DoxyCodeLine{66     QString         buyLink         ;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,5 @@
+D:/BookApp/build/CMakeFiles/docs.dir
+D:/BookApp/build/CMakeFiles/BookApp.dir
+D:/BookApp/build/CMakeFiles/INSTALL.dir
+D:/BookApp/build/CMakeFiles/ALL_BUILD.dir
+D:/BookApp/build/CMakeFiles/ZERO_CHECK.dir

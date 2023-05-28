@@ -9,6 +9,15 @@
 #include <QScrollArea>
 #include <QPropertyAnimation>
 
+#include <QLabel>
+#include <QPainter>
+#include <QStyleOption>
+#include <QStylePainter>
+#include <QGraphicsDropShadowEffect>
+
+
+
+
 SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
     QMainWindow(parent),
     ui(new Ui::SearchResultWindow)
@@ -17,21 +26,32 @@ SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
     //ui->setupUi(this);
 
     this->setWindowTitle("Book Finder App");
+    this->setStyleSheet("QMainWindow {background-color: #303030;}");
 
     QVBoxLayout *mainLayout = new QVBoxLayout();
     QWidget *centralWidget = new QWidget(this);
     centralWidget->setLayout(mainLayout);
     setCentralWidget(centralWidget);
-    setMinimumSize(400, 600);
+    setMinimumSize(700,600);
+    //setMaximumSize(1000,900);
+    centralWidget->setStyleSheet("QWidget {background-color: #303030;}");
 
     // Create the "Home" button
     QPushButton *homeButton = new QPushButton("Home", this);
-    homeButton->setStyleSheet("QPushButton { background-color: #007BFF; color: white; font-weight: bold; padding: 20px 20px; border-radius: 5px; }"
-                              "QPushButton:hover { background-color: #0056b3; }");
+    homeButton->setStyleSheet("QPushButton { background-color: orange; color: black; font-weight: bold; font-size: 16px; padding: 7px; border-radius: 5px; }"
+                              "QPushButton:hover { background-color: lightgreen; }");
     connect(homeButton, &QPushButton::clicked, this, &SearchResultWindow::goToHomePage);
+
+    QLabel *qLabel = new QLabel;
+
+    QString labelText = "<span style='color: white; font-weight: bold; font-size: 18px; font-family: Segoe UI'>BOOK FINDER</span>";
+    qLabel->setText(labelText);
+    qLabel->setAlignment(Qt::AlignCenter);
 
     QHBoxLayout *buttonLayout = new QHBoxLayout();
     buttonLayout->addStretch();
+    buttonLayout->addWidget(qLabel);
+    buttonLayout->addSpacing(1400);
     buttonLayout->addWidget(homeButton);
 
     // Create the scroll area
@@ -66,7 +86,7 @@ SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
                 cardLayout->setContentsMargins(20, 20, 20, 20);
 
                 // Set the background color and add border effect to the card
-                bookCard->setStyleSheet("QWidget { background-color: #F5F5F5; border-radius: 10px; border: 1px solid rgba(0, 0, 0, 0.2); }"
+                bookCard->setStyleSheet("QWidget { background-color: #424242; border-radius: 10px; border: 1px solid rgba(250, 250, 250, 0.2); }"
                                         "QWidget:hover { background-color: #E0E0E0; }");
 
 
@@ -110,11 +130,22 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
 {
     // Create the group box for the book
     QGroupBox* groupBox = new QGroupBox;
-    groupBox->setStyleSheet("QGroupBox {"
-                            "    border: 2px solid black;"
+    groupBox->setStyleSheet( "QGroupBox {"
+                            "    border: 2px solid #08F7FE;"
                             "    margin-top: 10px;"
-                            "    background-color: #f0f0f0;"
-                            "}");
+                            "    background-color: #212121;"
+
+                            "}"
+                             );
+    // Create a QGraphicsDropShadowEffect for the shadow effect
+    QGraphicsDropShadowEffect* shadowEffect = new QGraphicsDropShadowEffect;
+    shadowEffect->setColor(Qt::black);
+    shadowEffect->setBlurRadius(20);
+    shadowEffect->setOffset(0, 0);
+
+    // Apply the shadow effect to the group box
+    groupBox->setGraphicsEffect(shadowEffect);
+
 
     // Create the layout for the group box
     QHBoxLayout* layout = new QHBoxLayout(groupBox);
@@ -131,6 +162,11 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
     imageLabel->setAlignment(Qt::AlignCenter);
     imageLabel->setStyleSheet("QLabel { border: none; }"); // Remove the stylesheet for the image label
 
+    // Connect the read more button signal to the slot
+   // connect(imageLabel, &QLabel::clicked, [this, book]() {
+        //openBookDetailsWindow(book);
+    //});
+
     // Add the image label to the layout
     layout->addWidget(imageLabel);
 
@@ -138,20 +174,37 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
     QVBoxLayout* detailsLayout = new QVBoxLayout;
 
     // Create the book details labels
-    QLabel* titleLabel = new QLabel("<span style='font-weight: bold; font-size: 16px; color: #007BFF;'>Title-></span> <span style='font-size: 22px;'>"
+    QLabel* titleLabel = new QLabel("<span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>Title: </span> <span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>"
                                     + book.getTitle()
                                     + " </span>");
+    titleLabel->setStyleSheet("QLabel {"
+                              "   padding: 10px;"
+                              "    border: none;");
 
-    QLabel* isbnLabel = new QLabel("<span style='font-weight: bold; font-size: 16px; color: #007BFF;'>ISBN-></span> <span style='font-size: 22px;'>"
-                                   + book.getTitle()
+    QLabel* isbnLabel = new QLabel("<span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>ISBN: </span> <span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>"
+                                   + book.getISBN()
                                    + " </span>");
-    QLabel* authorsLabel = new QLabel("<span style='font-weight: bold; font-size: 16px; color: #007BFF;'>Authors-></span>  <span style='font-size: 22px;'>"
+    isbnLabel->setStyleSheet("QLabel {"
+                              "   padding: 10px;"
+                             "    border: none;");
+
+
+    QLabel* authorsLabel = new QLabel("<span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>Authors: </span>  <span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>"
                                       + book.getAuthors().join(", ")
                                       + " </span>");
+    authorsLabel->setStyleSheet("QLabel {"
+                             "   padding: 10px;"
+                             "    border: none;"
+                                );
 
-    QLabel* publishedLabel = new QLabel("<span style='font-weight: bold; font-size: 16px; color: #007BFF;'>Published Date-></span> <span style='font-size: 22px;'>("
+
+    QLabel* publishedLabel = new QLabel("<span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>Published Date: </span> <span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>("
                                         + book.getPublishedDate()
                                         + ") </span>");
+    publishedLabel->setStyleSheet("QLabel {"
+                                "   padding: 10px;"
+                                "    border: none;"
+                                  );
 
 
     QPushButton* readMoreButton = new QPushButton("Read More");
@@ -180,11 +233,24 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
     connect(readMoreButton, &QPushButton::clicked, [this, book]() {
         openBookDetailsWindow(book);
     });
+    titleLabel->setFixedWidth(300);
+    titleLabel->wordWrap();
 
-    titleLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    isbnLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    authorsLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    publishedLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    isbnLabel->setFixedWidth(300);
+    isbnLabel->wordWrap();
+
+    authorsLabel->setFixedWidth(300);
+    authorsLabel->wordWrap();
+
+    publishedLabel->setFixedWidth(300);
+    publishedLabel->wordWrap();
+
+
+
+    titleLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    isbnLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    authorsLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    publishedLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
     // Add the book details labels and read more button to the details layout
     detailsLayout->addWidget(titleLabel);

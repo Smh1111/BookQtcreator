@@ -6,6 +6,7 @@
 #include <QJsonParseError>
 #include <QDebug>
 
+
 void JsonParse::populateData(const QJsonArray& jsonArray)
 {
     for (const QJsonValue& value : jsonArray) {
@@ -20,6 +21,30 @@ void JsonParse::populateData(const QJsonArray& jsonArray)
 
             // set Title
             book.setTitle(volumeInfo.value("title").toString());
+
+            // set ISBN
+            /*QJsonArray industryIDArray = volumeInfo.value("industryIdentifiers").toArray();
+            QJsonArray industryID;
+            for (const QJsonValue& industID : industryIDArray) {
+                industryID.push_back(industID.toObject());
+            }
+            QStringList ISBNList;
+            for (const QJsonValue& isbn : industryID){
+                ISBNList.push_back(isbn.value("identifier").toString());
+            }*/
+
+            // Access the 'industryIdentifiers' array
+            QJsonArray industryIdentifiers = volumeInfo["industryIdentifiers"].toArray();
+            QStringList ISBNList;
+            // Iterate over the industry identifiers array
+            for (const QJsonValue& identifierValue : industryIdentifiers) {
+                QJsonObject identifierObject = identifierValue.toObject();
+
+                // Access the 'identifier' value
+                QString identifier = identifierObject["identifier"].toString();
+                ISBNList.push_back(identifier);
+            }
+            book.setISBN(ISBNList);
 
             // set Description
             book.setDescription(volumeInfo.value("description").toString());
@@ -40,9 +65,28 @@ void JsonParse::populateData(const QJsonArray& jsonArray)
             book.setPageCount(volumeInfo.value("pageCount").toInt());
 
             // set ImageLists
+            // Handle images array
+            QJsonObject imageObject= volumeInfo.value("imageLinks").toObject();
+            QStringList imagelist;
+
+            imagelist.push_back(imageObject.value("smallThumbnail").toString());
+            imagelist.push_back(imageObject.value("thumbnail").toString());
+            imagelist.push_back(imageObject.value("small").toString());
+            imagelist.push_back(imageObject.value("medium").toString());
+            imagelist.push_back(imageObject.value("large").toString());
+            imagelist.push_back(imageObject.value("extraLarge").toString());
+
+            book.setImageLinks(imagelist);
 
 
             // set infoLink
+            book.setInfoLink(volumeInfo.value("infoLink").toString());
+
+            // set previewLink
+            book.setPreviewLink(volumeInfo.value("previewLink").toString());
+
+
+
 
             // Add the book to the bookList
             bookList.append(book);

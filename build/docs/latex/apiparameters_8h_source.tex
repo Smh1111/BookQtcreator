@@ -1,0 +1,36 @@
+\hypertarget{apiparameters_8h_source}{}\doxysection{D\+:/\+Book\+App/apiparameters.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef APIPARAMETERS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define APIPARAMETERS\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QString>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QUrlQuery>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QMap>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_api_parameters}{ApiParameters}}: \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11 \textcolor{keyword}{public}:}
+\DoxyCodeLine{12     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_api_parameters}{ApiParameters}}(QObject *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keywordtype}{void} setQuery(\textcolor{keyword}{const} QString\& query, \textcolor{keywordtype}{int} maxResult);}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     QString getQueryString() \textcolor{keyword}{const};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{comment}{// Dynamic parameter handling}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} setParameter(\textcolor{keyword}{const} QString\& key, \textcolor{keyword}{const} QString\& value);}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} removeParameter(\textcolor{keyword}{const} QString\& key);}
+\DoxyCodeLine{22     QUrl buildRequestUrl(\textcolor{keyword}{const} QUrl\& baseUrl) \textcolor{keyword}{const};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{private}:}
+\DoxyCodeLine{26     QUrlQuery urlQuery;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// APIPARAMETERS\_H}}
+
+\end{DoxyCode}

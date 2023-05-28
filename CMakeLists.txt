@@ -27,36 +27,50 @@ set(PROJECT_SOURCES
         book.cpp
         searchresultwindow.cpp
         searchresultwindow.h
-        searchresultwindow.ui
         bookdetailswindow.h
         bookdetailswindow.cpp
-
         #test/testings.h
         #test/testings.cpp
 )
+
+# Find Doxygen package
+find_package(Doxygen)
+
+if(DOXYGEN_FOUND)
+    # Set input and output directories for Doxygen
+    set(DOXYGEN_INPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+    set(DOXYGEN_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/docs)
+
+    # Configure Doxyfile using variables
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
+
+    # Add a custom target for generating Doxygen documentation
+    add_custom_target(docs COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+endif()
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(BookApp
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET BookApp APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
+    # Define target properties for Android with Qt 6 as:
+    # set_property(TARGET BookApp APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+    #              ${CMAKE_CURRENT_SOURCE_DIR}/android)
+    # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
         add_library(BookApp SHARED
             ${PROJECT_SOURCES}
         )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
+        # Define properties for Android with Qt 5 after find_package() calls as:
+        # set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(BookApp
             ${PROJECT_SOURCES}
         )
     endif()
 endif()
+
 target_link_libraries(BookApp PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Test)
 
 set_target_properties(BookApp PROPERTIES
@@ -75,4 +89,9 @@ install(TARGETS BookApp
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(BookApp)
+endif()
+
+if(DOXYGEN_FOUND)
+    # Add target dependency on 'docs' to generate documentation during build
+    add_dependencies(BookApp docs)
 endif()

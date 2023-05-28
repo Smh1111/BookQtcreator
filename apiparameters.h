@@ -11,7 +11,7 @@ class ApiParameters: public QObject
 public:
     explicit ApiParameters(QObject *parent = nullptr);
 
-    void setQuery(const QString& query);
+    void setQuery(const QString& query, int maxResult);
 
     QString getQueryString() const;
 
@@ -21,8 +21,10 @@ public:
     void removeParameter(const QString& key);
     QUrl buildRequestUrl(const QUrl& baseUrl) const;
 
+
 private:
     QUrlQuery urlQuery;
+
 
 };
 
