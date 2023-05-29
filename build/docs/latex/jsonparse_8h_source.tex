@@ -3,38 +3,33 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef JSONPARSE\_H}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define JSONPARSE\_H}}
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QObject>}}
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}book.h"{}}}
-\DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_json_parse}{JsonParse}} : \textcolor{keyword}{public} QObject}
-\DoxyCodeLine{7 \{}
-\DoxyCodeLine{8     Q\_OBJECT}
-\DoxyCodeLine{9 \textcolor{keyword}{public}:}
-\DoxyCodeLine{10     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_json_parse}{JsonParse}}(QObject* parent = \textcolor{keyword}{nullptr}): QObject(parent) \{\}}
-\DoxyCodeLine{11 }
-\DoxyCodeLine{12     \textcolor{keywordtype}{bool} parseJson(\textcolor{keyword}{const} QString\& jsonString);}
-\DoxyCodeLine{13 }
-\DoxyCodeLine{14     \textcolor{keywordtype}{void} printData();}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}book.h"{}}}
 \DoxyCodeLine{15 }
-\DoxyCodeLine{16     \textcolor{keywordtype}{void} populateData(\textcolor{keyword}{const} QJsonArray\& jsonArray);}
-\DoxyCodeLine{17 }
-\DoxyCodeLine{18     QList<Book> getBookList();}
-\DoxyCodeLine{19 }
-\DoxyCodeLine{20     \textcolor{comment}{// For dynamic binding json values}}
-\DoxyCodeLine{21     \textcolor{keywordtype}{void} processJson(\textcolor{keyword}{const} QJsonObject\& jsonObject);}
-\DoxyCodeLine{22     \textcolor{keywordtype}{void} processJsonArray(\textcolor{keyword}{const} QJsonArray\& jsonArray);}
-\DoxyCodeLine{23     \textcolor{keywordtype}{void} processKeyValue(\textcolor{keyword}{const} QString\& key, \textcolor{keyword}{const} QJsonValue\& value);}
-\DoxyCodeLine{24 }
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27 \textcolor{keyword}{private}:}
-\DoxyCodeLine{28     QList<Book> bookList;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_json_parse}{JsonParse}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     Q\_OBJECT}
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_json_parse_aeeb24281844c613132bc4a1ec7b93524}{JsonParse}}(QObject* parent = \textcolor{keyword}{nullptr}): QObject(parent) \{\}}
 \DoxyCodeLine{29 }
-\DoxyCodeLine{30 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_json_parse_a8441d6622f0dd08f5bbd741626596ed4}{parseJson}}(\textcolor{keyword}{const} QString\& jsonString);      \textcolor{comment}{// Parse the json string}}
 \DoxyCodeLine{31 }
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33 \};}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// JSONPARSE\_H}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_json_parse_aaba45abcf2ed85cfbcc41884439be511}{printData}}();                               \textcolor{comment}{// Print the data}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_json_parse_aa795b7d5352f1aeae7b0d343ee6b634b}{populateData}}(\textcolor{keyword}{const} QJsonArray\& jsonArray); \textcolor{comment}{// Populate the data}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     QList<Book> \mbox{\hyperlink{class_json_parse_ac3a8f06c25fed0aeefb1561b50bce645}{getBookList}}();                      \textcolor{comment}{// Get the book list}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{comment}{// For dynamic binding json values}}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_json_parse_a81e3c5b3dccf08dccf0153d66b929fbc}{processJson}}(\textcolor{keyword}{const} QJsonObject\& jsonObject); }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_json_parse_a1c650e9c2def1533fca617ec0cf1fa49}{processJsonArray}}(\textcolor{keyword}{const} QJsonArray\& jsonArray);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_json_parse_a4eadc5e07ef5bb14cef2339f975cb853}{processKeyValue}}(\textcolor{keyword}{const} QString\& key, \textcolor{keyword}{const} QJsonValue\& value);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{private}:}
+\DoxyCodeLine{50     QList<Book> bookList;}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// JSONPARSE\_H}}
 
 \end{DoxyCode}

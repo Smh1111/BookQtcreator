@@ -9,12 +9,22 @@
 #include <QUrl>
 #include <QMessageBox>
 #include <QSizePolicy>
+#include <QGroupBox>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+
 
 BookDetailsWindow::~BookDetailsWindow()
 {
 
 }
 
+/**
+ * @brief Construct a new Book Details Window:: Book Details Window object
+ * 
+ * @param book  The book object to display the details of.
+ * @param parent    The parent widget.
+ */
 BookDetailsWindow::BookDetailsWindow(const Book &book, QWidget *parent) : QWidget(parent)
 {
     // Set up the window properties
@@ -74,19 +84,78 @@ BookDetailsWindow::BookDetailsWindow(const Book &book, QWidget *parent) : QWidge
     infoLinkValueLabel->setTextFormat(Qt::RichText);
     infoLinkValueLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
     infoLinkValueLabel->setOpenExternalLinks(true);
+    infoLinkValueLabel->setStyleSheet("QLabel{"
+                                      "color: #FF44CC"
+                                      "}");
+
+    //Styling bookdetailswindow
+    this->setStyleSheet("QWidget{"
+                        "background-color: #303030;"
+                        "}"
+                        "QLabel{"
+                        "color: white;"
+                        "font-family: Segoe UI;"
+                        "font-weight: bold;"
+                        "font-size: 14px;"
+                        "}"
+                        "QTextEdit{"
+                        "color: white;"
+                        "font-family: Segoe UI;"
+                        "font-weight: bold;"
+                        "font-size: 14px;"
+                        "}"
+                        );
+
+    //Book Card creation with QGroupBox
+    QGroupBox *groupBox = new QGroupBox;
+    groupBox->setStyleSheet( "QGroupBox {"
+                            "border: 2px solid #08F7FE;"
+                            "margin-top: 10px;"
+
+                            "}"
+                            );
+    QVBoxLayout *groupBoxLayout = new QVBoxLayout(groupBox);
+
+    QHBoxLayout *titleLayout = new QHBoxLayout;
+    titleLayout->addWidget(titleLabel);
+    titleLayout->addWidget(titleValueLabel);
+
+    QHBoxLayout *isbnLayout = new QHBoxLayout;
+    isbnLayout->addWidget(isbnLabel);
+    isbnLayout->addWidget(isbnValueLabel);
+
+    QHBoxLayout *authorsLayout = new QHBoxLayout;
+    authorsLayout->addWidget(authorsLabel);
+    authorsLayout->addWidget(authorsValueLabel);
+
+    QHBoxLayout *dateLayout = new QHBoxLayout;
+    dateLayout->addWidget(dateLabel);
+    dateLayout->addWidget(dateValueLabel);
+
+    QHBoxLayout *descriptionLayout = new QHBoxLayout;
+    descriptionLayout->addWidget(descriptionLabel);
+    descriptionLayout->addWidget(descriptionValueTextEdit);
+
+    groupBoxLayout->addWidget(imageLabel);
+    groupBoxLayout->addWidget(pageCountValueLabel);
+
+    groupBoxLayout->addLayout(titleLayout);
+
+    groupBoxLayout->addLayout(isbnLayout);
+
+    groupBoxLayout->addLayout(authorsLayout);
+
+    groupBoxLayout->addLayout(dateLayout);
+
+    groupBoxLayout->addLayout(descriptionLayout);
+
+    groupBoxLayout->addWidget(infoLinkValueLabel);
+    groupBoxLayout->addStretch();
 
 
 
-    layout->addRow(imageLabel);
-    layout->addRow(pageCountValueLabel);
-    layout->addRow(titleLabel, titleValueLabel);
-    layout->addRow(isbnLabel, isbnValueLabel);
-    layout->addRow(authorsLabel, authorsValueLabel);
-
-    layout->addRow(dateLabel, dateValueLabel);
-    layout->addRow(descriptionLabel, descriptionValueTextEdit);
-    layout->addRow(infoLinkValueLabel);
-
+    // Add the group box to the main layout
+    layout->addWidget(groupBox);
 
     titleValueLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     isbnValueLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
@@ -102,7 +171,12 @@ BookDetailsWindow::BookDetailsWindow(const Book &book, QWidget *parent) : QWidge
 
 }
 
-
+/**
+ * @brief This function downloads the image data from the url.
+ * 
+ * @param url The url of the image.
+ * @return QByteArray The image data.
+ */
 QByteArray BookDetailsWindow::downloadImageData(const QString &url)
 {
     QNetworkAccessManager manager;

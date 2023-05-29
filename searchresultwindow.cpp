@@ -15,9 +15,12 @@
 #include <QStylePainter>
 #include <QGraphicsDropShadowEffect>
 
-
-
-
+/**
+ * @brief Construct a new Search Result Window:: Search Result Window object
+ * 
+ * @param parent 
+ * @param data 
+ */
 SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
     QMainWindow(parent),
     ui(new Ui::SearchResultWindow)
@@ -86,8 +89,8 @@ SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
                 cardLayout->setContentsMargins(20, 20, 20, 20);
 
                 // Set the background color and add border effect to the card
-                bookCard->setStyleSheet("QWidget { background-color: #424242; border-radius: 10px; border: 1px solid rgba(250, 250, 250, 0.2); }"
-                                        "QWidget:hover { background-color: #E0E0E0; }");
+                bookCard->setStyleSheet("QWidget { background-color: #212121; border-radius: 10px; border: 1px solid; }"
+                                        "QWidget:hover { background-color: #424242; }");
 
 
 
@@ -106,8 +109,11 @@ SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
     }
 }
 
-
-
+/**
+ * @brief This function is used to load the image from the url
+ * @param imageUrl
+ * @return QPixmap 
+ */
 QPixmap SearchResultWindow::loadImageFromUrl(const QString& imageUrl)
 {
     QNetworkAccessManager manager;
@@ -126,6 +132,7 @@ QPixmap SearchResultWindow::loadImageFromUrl(const QString& imageUrl)
     return pixmap;
 }
 
+
 QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
 {
     // Create the group box for the book
@@ -136,7 +143,7 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
                             "    background-color: #212121;"
 
                             "}"
-                             );
+                            );
     // Create a QGraphicsDropShadowEffect for the shadow effect
     QGraphicsDropShadowEffect* shadowEffect = new QGraphicsDropShadowEffect;
     shadowEffect->setColor(Qt::black);
@@ -163,8 +170,8 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
     imageLabel->setStyleSheet("QLabel { border: none; }"); // Remove the stylesheet for the image label
 
     // Connect the read more button signal to the slot
-   // connect(imageLabel, &QLabel::clicked, [this, book]() {
-        //openBookDetailsWindow(book);
+    // connect(imageLabel, &QLabel::clicked, [this, book]() {
+    //openBookDetailsWindow(book);
     //});
 
     // Add the image label to the layout
@@ -185,7 +192,7 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
                                    + book.getISBN()
                                    + " </span>");
     isbnLabel->setStyleSheet("QLabel {"
-                              "   padding: 10px;"
+                             "   padding: 10px;"
                              "    border: none;");
 
 
@@ -193,8 +200,8 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
                                       + book.getAuthors().join(", ")
                                       + " </span>");
     authorsLabel->setStyleSheet("QLabel {"
-                             "   padding: 10px;"
-                             "    border: none;"
+                                "   padding: 10px;"
+                                "    border: none;"
                                 );
 
 
@@ -202,8 +209,8 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
                                         + book.getPublishedDate()
                                         + ") </span>");
     publishedLabel->setStyleSheet("QLabel {"
-                                "   padding: 10px;"
-                                "    border: none;"
+                                  "   padding: 10px;"
+                                  "    border: none;"
                                   );
 
 
@@ -266,19 +273,29 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
 }
 
 
+/**
+ * @brief Destroy the Search Result Window:: Search Result Window object and its UI elements 
 
+ */
 SearchResultWindow::~SearchResultWindow()
 {
     delete ui;
 }
 
+/**
+ * @brief Construct a new Search Result Window:: Search Result Window object. This goes to Homepage when the user clicks on the Home button
+ * 
+ */
 void SearchResultWindow::goToHomePage()
 {
     hide();
     HomePage *homepage = new HomePage();
     homepage->show();
 }
-
+/**
+ * @brief Construct a new Search Result Window:: openBookDetailsWindow. This opens up the book details window when the user clicks on the More Info button
+ * 
+ */
 void SearchResultWindow::openBookDetailsWindow(const Book &book)
 {
     //this->hide();

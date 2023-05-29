@@ -5,14 +5,15 @@ ApiParameters::ApiParameters(QObject *parent) : QObject(parent)
 {
 
 }
-
-/*
- * Set the query for the APi parameter
- *
- *
+/**
+ * @brief This function sets the query string and the max result. 
+ *      It also sets the order by and the api key. 
+ *     The query string is the search term.
+ *    The max result is the number of results to be shown.
+ *      The order by is showing the newest books first.
+ * @param query  
+ * @param maxResult     
  */
-
-
 void ApiParameters::setQuery(const QString& query, int maxResult)
 {
     qDebug() << "Query in api param = " << query;
@@ -31,6 +32,7 @@ void ApiParameters::setQuery(const QString& query, int maxResult)
 
 
 }
+
 
 QString ApiParameters::getQueryString() const
 {

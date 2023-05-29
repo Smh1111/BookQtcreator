@@ -5,64 +5,57 @@
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define BOOK\_H}}
 \DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QString>}}
 \DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QStringList>}}
-\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_book}{Book}} \{}
-\DoxyCodeLine{11 \textcolor{keyword}{public}:}
-\DoxyCodeLine{12     \mbox{\hyperlink{class_book}{Book}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{13 }
-\DoxyCodeLine{14 }
-\DoxyCodeLine{15     \textcolor{comment}{// Title}}
-\DoxyCodeLine{16     \textcolor{keywordtype}{void} setTitle           (QString        Title);}
-\DoxyCodeLine{21     \textcolor{keyword}{const} QString\& \mbox{\hyperlink{class_book_ac9ac170b1fdd039c52a5c3bbb476cf9a}{getTitle}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23     \textcolor{comment}{// ISBN}}
-\DoxyCodeLine{24     \textcolor{keywordtype}{void} setISBN            (QStringList\&    isbn);}
-\DoxyCodeLine{25     \textcolor{keywordtype}{void} setDescription     (QString        description);}
-\DoxyCodeLine{26     \textcolor{keywordtype}{void} setAuthors         (QStringList\&   authors);}
-\DoxyCodeLine{27     \textcolor{keywordtype}{void} setPublishedDate   (QString        publishedDate);}
-\DoxyCodeLine{28     \textcolor{keywordtype}{void} setPageCount       (\textcolor{keywordtype}{int}            pageCount);}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{30     \textcolor{keywordtype}{void} setImageLinks      (QStringList\&       imageLinks);}
-\DoxyCodeLine{31     \textcolor{keywordtype}{void} setInfoLink        (QString        infoLink);}
-\DoxyCodeLine{32     \textcolor{keywordtype}{void} setPreviewLink     (QString        previewLink);}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36 }
-\DoxyCodeLine{37 }
-\DoxyCodeLine{38     \textcolor{keyword}{const} QStringList\& getISBNList() \textcolor{keyword}{const};}
-\DoxyCodeLine{39     QString getISBN()   \textcolor{keyword}{const};}
-\DoxyCodeLine{40     \textcolor{keyword}{const} QString\& getDescription() \textcolor{keyword}{const};}
-\DoxyCodeLine{41     \textcolor{keyword}{const} QStringList\& getAuthors() \textcolor{keyword}{const};}
-\DoxyCodeLine{42     \textcolor{keyword}{const} QString\& getPublishedDate() \textcolor{keyword}{const};}
-\DoxyCodeLine{43     \textcolor{keywordtype}{int} getPageCount() \textcolor{keyword}{const};}
-\DoxyCodeLine{44     \textcolor{keyword}{const} QStringList\& getImageLinks() \textcolor{keyword}{const};}
-\DoxyCodeLine{45     \textcolor{keyword}{const} QString\& getInfoLink() \textcolor{keyword}{const};}
-\DoxyCodeLine{46     \textcolor{keyword}{const} QString\& getPreviewLink() \textcolor{keyword}{const};}
-\DoxyCodeLine{47     QString getInformationLink() \textcolor{keyword}{const};}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50     QString getImageUrl() \textcolor{keyword}{const};}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52 \textcolor{keyword}{private}:}
-\DoxyCodeLine{53     \textcolor{comment}{// Book collections}}
-\DoxyCodeLine{54     QString         title           ;}
-\DoxyCodeLine{55     QStringList        isbn         ;}
-\DoxyCodeLine{56     QStringList     authors         ;}
-\DoxyCodeLine{57     QString         publishedDate   ;}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60     \textcolor{comment}{// For Book Details}}
-\DoxyCodeLine{61     QString         description     ;}
-\DoxyCodeLine{62     QStringList     imageList       ;}
-\DoxyCodeLine{63     QString         infoLink        ;}
-\DoxyCodeLine{64     \textcolor{keywordtype}{int}             pageCount       ;}
-\DoxyCodeLine{65     QString         previewLink     ;}
-\DoxyCodeLine{66     QString         buyLink         ;}
-\DoxyCodeLine{67 }
-\DoxyCodeLine{68 }
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70 \};}
-\DoxyCodeLine{71 }
-\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_H}}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_book}{Book}} \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_book}{Book}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_book_a167c89c453ae3e54bdce0f62bb3897f4}{setTitle}}           (QString        Title);}
+\DoxyCodeLine{34     \textcolor{keyword}{const} QString\& \mbox{\hyperlink{class_book_ac9ac170b1fdd039c52a5c3bbb476cf9a}{getTitle}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_book_aaead8d0a55dbf23d5b0f3bbca1201466}{setISBN}}            (QStringList\&    isbn);}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_book_a3b962c33a4d233f3515aea4050988bb0}{setDescription}}     (QString        description);}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_book_a95119c6b40e67775b6b33f5ea86e2cf8}{setAuthors}}         (QStringList\&   authors);}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_book_a99908ab5afa747c2a2f1c9ab3ced6061}{setPublishedDate}}   (QString        publishedDate);}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_book_a3fb78fc32e29292c944216989a6b62a7}{setPageCount}}       (\textcolor{keywordtype}{int}            pageCount);}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_book_a4ca64776eddc51f543f8bf6e2d05eca4}{setImageLinks}}      (QStringList\&       imageLinks);}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_book_a64bc483164356ef4a1d49b07c5732b6f}{setInfoLink}}        (QString        infoLink);}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_book_a572aa23cd4e2e6cee4580a193ad23454}{setPreviewLink}}     (QString        previewLink);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{84     \textcolor{keyword}{const} QStringList\& \mbox{\hyperlink{class_book_ac8bcf6e4a64e8dc66d0fe271e72e004c}{getISBNList}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{85     }
+\DoxyCodeLine{91     QString \mbox{\hyperlink{class_book_a448420d674ab2f75ad6b29386caef660}{getISBN}}()   \textcolor{keyword}{const};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{98     \textcolor{keyword}{const} QString\& \mbox{\hyperlink{class_book_a74fdf253e890ae320e119699572d2122}{getDescription}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{104     \textcolor{keyword}{const} QStringList\& \mbox{\hyperlink{class_book_a38d8ddb51387ccb7f80f0d2654fedb89}{getAuthors}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{110     \textcolor{keyword}{const} QString\& \mbox{\hyperlink{class_book_a4658e53629fee1fbb9c835bdd5dea7cb}{getPublishedDate}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{116     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_book_ac3ac6dc111ba57eb94bfbc7e8d4396be}{getPageCount}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{122     \textcolor{keyword}{const} QStringList\& \mbox{\hyperlink{class_book_aa608e007fd56ca69f027e4f30b857d05}{getImageLinks}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{128     \textcolor{keyword}{const} QString\& \mbox{\hyperlink{class_book_af81f56585fcc2566407c5fafb30575cf}{getInfoLink}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{134     \textcolor{keyword}{const} QString\& \mbox{\hyperlink{class_book_a0d08b3ef39a1ac20185533a1da4a527d}{getPreviewLink}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{140     QString \mbox{\hyperlink{class_book_a44e3bfc7d2f2acbda561198a4d0d5095}{getInformationLink}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{147     QString \mbox{\hyperlink{class_book_ae6bc277260e8d16110173e8da58a9a09}{getImageUrl}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{keyword}{private}:}
+\DoxyCodeLine{150     QString         title           ;}
+\DoxyCodeLine{151     QStringList        isbn         ;}
+\DoxyCodeLine{152     QStringList     authors         ;}
+\DoxyCodeLine{153     QString         publishedDate   ;}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     QString         description     ;}
+\DoxyCodeLine{157     QStringList     imageList       ;}
+\DoxyCodeLine{158     QString         infoLink        ;}
+\DoxyCodeLine{159     \textcolor{keywordtype}{int}             pageCount       ;}
+\DoxyCodeLine{160     QString         previewLink     ;}
+\DoxyCodeLine{161     QString         buyLink         ;}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \};}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOOK\_H}}
 
 \end{DoxyCode}

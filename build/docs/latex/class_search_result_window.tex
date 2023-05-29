@@ -1,5 +1,14 @@
 \hypertarget{class_search_result_window}{}\doxysection{Search\+Result\+Window Class Reference}
 \label{class_search_result_window}\index{SearchResultWindow@{SearchResultWindow}}
+
+
+This class handles the search result window. It contains the functions for creating the search result window.  
+
+
+
+
+{\ttfamily \#include $<$searchresultwindow.\+h$>$}
+
 Inheritance diagram for Search\+Result\+Window\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,27 +18,149 @@ Inheritance diagram for Search\+Result\+Window\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_search_result_window_aca491cc627d7e62733f0c56f148a166c}\label{class_search_result_window_aca491cc627d7e62733f0c56f148a166c}} 
-{\bfseries Search\+Result\+Window} (QWidget $\ast$parent=nullptr, QList$<$ \mbox{\hyperlink{class_book}{Book}} $>$ data=QList$<$ \mbox{\hyperlink{class_book}{Book}} $>$())
-\item 
+\mbox{\hyperlink{class_search_result_window_aca491cc627d7e62733f0c56f148a166c}{Search\+Result\+Window}} (QWidget $\ast$parent=nullptr, QList$<$ \mbox{\hyperlink{class_book}{Book}} $>$ data=QList$<$ \mbox{\hyperlink{class_book}{Book}} $>$())
+\begin{DoxyCompactList}\small\item\em Construct a new Search Result Window\+:\+: Search Result Window object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_search_result_window_a94cd69002158a4d09a3df247451541aa}{$\sim$\+Search\+Result\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Search Result Window\+:\+: Search Result Window object and its UI elements. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_search_result_window_a5e8e7afb8f57b22d606bfe27ea96b0cf}\label{class_search_result_window_a5e8e7afb8f57b22d606bfe27ea96b0cf}} 
 void {\bfseries get\+Data} ()
-\item 
-\mbox{\Hypertarget{class_search_result_window_a856b3291ac4e0e01a6cb2b307e6d7599}\label{class_search_result_window_a856b3291ac4e0e01a6cb2b307e6d7599}} 
-void {\bfseries handle\+Book\+Button\+Click} (const \mbox{\hyperlink{class_book}{Book}} \&book)
-\item 
-\mbox{\Hypertarget{class_search_result_window_a695de2e00e3c07f8720330599f3e0223}\label{class_search_result_window_a695de2e00e3c07f8720330599f3e0223}} 
-void {\bfseries open\+Book\+Details\+Window} (const \mbox{\hyperlink{class_book}{Book}} \&book)
-\item 
-\mbox{\Hypertarget{class_search_result_window_ac932c3aaf2be671e27d49c57de89297e}\label{class_search_result_window_ac932c3aaf2be671e27d49c57de89297e}} 
-QGroup\+Box $\ast$ {\bfseries create\+Book\+Group\+Box} (const \mbox{\hyperlink{class_book}{Book}} \&book)
-\item 
-\mbox{\Hypertarget{class_search_result_window_aa9eac90f5b353a8dde8fdd215ee2bcbf}\label{class_search_result_window_aa9eac90f5b353a8dde8fdd215ee2bcbf}} 
-QPixmap {\bfseries load\+Image\+From\+Url} (const QString \&image\+Url)
-\item 
+\begin{DoxyCompactList}\small\item\em get\+Data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_search_result_window_a856b3291ac4e0e01a6cb2b307e6d7599}{handle\+Book\+Button\+Click}} (const \mbox{\hyperlink{class_book}{Book}} \&book)
+\begin{DoxyCompactList}\small\item\em Handle the book button click. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_search_result_window_a695de2e00e3c07f8720330599f3e0223}{open\+Book\+Details\+Window}} (const \mbox{\hyperlink{class_book}{Book}} \&book)
+\begin{DoxyCompactList}\small\item\em Open the book details window. \end{DoxyCompactList}\item 
+QGroup\+Box $\ast$ \mbox{\hyperlink{class_search_result_window_ac932c3aaf2be671e27d49c57de89297e}{create\+Book\+Group\+Box}} (const \mbox{\hyperlink{class_book}{Book}} \&book)
+\begin{DoxyCompactList}\small\item\em Create the book group box. \end{DoxyCompactList}\item 
+QPixmap \mbox{\hyperlink{class_search_result_window_aa9eac90f5b353a8dde8fdd215ee2bcbf}{load\+Image\+From\+Url}} (const QString \&image\+Url)
+\begin{DoxyCompactList}\small\item\em Load the image from the url. \end{DoxyCompactList}\item 
+QWidget $\ast$ \mbox{\hyperlink{class_search_result_window_a12e1340a580e86b8eff7609d1547d8ed}{create\+Book\+Card}} (const \mbox{\hyperlink{class_book}{Book}} \&book)
+\begin{DoxyCompactList}\small\item\em Create the book card. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class handles the search result window. It contains the functions for creating the search result window. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_search_result_window_aca491cc627d7e62733f0c56f148a166c}\label{class_search_result_window_aca491cc627d7e62733f0c56f148a166c}} 
+\index{SearchResultWindow@{SearchResultWindow}!SearchResultWindow@{SearchResultWindow}}
+\index{SearchResultWindow@{SearchResultWindow}!SearchResultWindow@{SearchResultWindow}}
+\doxysubsubsection{\texorpdfstring{SearchResultWindow()}{SearchResultWindow()}}
+{\footnotesize\ttfamily Search\+Result\+Window\+::\+Search\+Result\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr},  }\item[{QList$<$ \mbox{\hyperlink{class_book}{Book}} $>$}]{data = {\ttfamily QList$<$\mbox{\hyperlink{class_book}{Book}}$>$()} }\end{DoxyParamCaption})}
+
+
+
+Construct a new Search Result Window\+:\+: Search Result Window object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_search_result_window_a94cd69002158a4d09a3df247451541aa}\label{class_search_result_window_a94cd69002158a4d09a3df247451541aa}} 
+\index{SearchResultWindow@{SearchResultWindow}!````~SearchResultWindow@{$\sim$SearchResultWindow}}
+\index{````~SearchResultWindow@{$\sim$SearchResultWindow}!SearchResultWindow@{SearchResultWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$SearchResultWindow()}{~SearchResultWindow()}}
+{\footnotesize\ttfamily Search\+Result\+Window\+::$\sim$\+Search\+Result\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Search Result Window\+:\+: Search Result Window object and its UI elements. 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_search_result_window_a12e1340a580e86b8eff7609d1547d8ed}\label{class_search_result_window_a12e1340a580e86b8eff7609d1547d8ed}} 
-QWidget $\ast$ {\bfseries create\+Book\+Card} (const \mbox{\hyperlink{class_book}{Book}} \&book)
-\end{DoxyCompactItemize}
+\index{SearchResultWindow@{SearchResultWindow}!createBookCard@{createBookCard}}
+\index{createBookCard@{createBookCard}!SearchResultWindow@{SearchResultWindow}}
+\doxysubsubsection{\texorpdfstring{createBookCard()}{createBookCard()}}
+{\footnotesize\ttfamily QWidget $\ast$ Search\+Result\+Window\+::create\+Book\+Card (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_book}{Book}} \&}]{book }\end{DoxyParamCaption})}
+
+
+
+Create the book card. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em book} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_search_result_window_ac932c3aaf2be671e27d49c57de89297e}\label{class_search_result_window_ac932c3aaf2be671e27d49c57de89297e}} 
+\index{SearchResultWindow@{SearchResultWindow}!createBookGroupBox@{createBookGroupBox}}
+\index{createBookGroupBox@{createBookGroupBox}!SearchResultWindow@{SearchResultWindow}}
+\doxysubsubsection{\texorpdfstring{createBookGroupBox()}{createBookGroupBox()}}
+{\footnotesize\ttfamily QGroup\+Box $\ast$ Search\+Result\+Window\+::create\+Book\+Group\+Box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_book}{Book}} \&}]{book }\end{DoxyParamCaption})}
+
+
+
+Create the book group box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em book} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QGroup\+Box$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_search_result_window_a856b3291ac4e0e01a6cb2b307e6d7599}\label{class_search_result_window_a856b3291ac4e0e01a6cb2b307e6d7599}} 
+\index{SearchResultWindow@{SearchResultWindow}!handleBookButtonClick@{handleBookButtonClick}}
+\index{handleBookButtonClick@{handleBookButtonClick}!SearchResultWindow@{SearchResultWindow}}
+\doxysubsubsection{\texorpdfstring{handleBookButtonClick()}{handleBookButtonClick()}}
+{\footnotesize\ttfamily void Search\+Result\+Window\+::handle\+Book\+Button\+Click (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_book}{Book}} \&}]{book }\end{DoxyParamCaption})}
+
+
+
+Handle the book button click. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em book} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_search_result_window_aa9eac90f5b353a8dde8fdd215ee2bcbf}\label{class_search_result_window_aa9eac90f5b353a8dde8fdd215ee2bcbf}} 
+\index{SearchResultWindow@{SearchResultWindow}!loadImageFromUrl@{loadImageFromUrl}}
+\index{loadImageFromUrl@{loadImageFromUrl}!SearchResultWindow@{SearchResultWindow}}
+\doxysubsubsection{\texorpdfstring{loadImageFromUrl()}{loadImageFromUrl()}}
+{\footnotesize\ttfamily QPixmap Search\+Result\+Window\+::load\+Image\+From\+Url (\begin{DoxyParamCaption}\item[{const QString \&}]{image\+Url }\end{DoxyParamCaption})}
+
+
+
+Load the image from the url. 
+
+This function is used to load the image from the url.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Url} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QPixmap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_search_result_window_a695de2e00e3c07f8720330599f3e0223}\label{class_search_result_window_a695de2e00e3c07f8720330599f3e0223}} 
+\index{SearchResultWindow@{SearchResultWindow}!openBookDetailsWindow@{openBookDetailsWindow}}
+\index{openBookDetailsWindow@{openBookDetailsWindow}!SearchResultWindow@{SearchResultWindow}}
+\doxysubsubsection{\texorpdfstring{openBookDetailsWindow()}{openBookDetailsWindow()}}
+{\footnotesize\ttfamily void Search\+Result\+Window\+::open\+Book\+Details\+Window (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_book}{Book}} \&}]{book }\end{DoxyParamCaption})}
+
+
+
+Open the book details window. 
+
+Construct a new Search Result Window\+:\+: open\+Book\+Details\+Window. This opens up the book details window when the user clicks on the More Info button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em book} & \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

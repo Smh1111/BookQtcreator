@@ -1,5 +1,14 @@
 \hypertarget{class_json_parse}{}\doxysection{Json\+Parse Class Reference}
 \label{class_json_parse}\index{JsonParse@{JsonParse}}
+
+
+This class handles the json parser. It contains the functions for parsing json.  
+
+
+
+
+{\ttfamily \#include $<$jsonparse.\+h$>$}
+
 Inheritance diagram for Json\+Parse\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,34 +18,151 @@ Inheritance diagram for Json\+Parse\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_json_parse_aeeb24281844c613132bc4a1ec7b93524}{Json\+Parse}} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_json_parse}{Json\+Parse}} explicit constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_json_parse_a8441d6622f0dd08f5bbd741626596ed4}{parse\+Json}} (const QString \&json\+String)
+\begin{DoxyCompactList}\small\item\em This function parses the json string and returns true if the json string is valid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_json_parse_aaba45abcf2ed85cfbcc41884439be511}{print\+Data}} ()
+\begin{DoxyCompactList}\small\item\em This function parses the key-\/value pair and returns true if the key-\/value pair is valid. Unfinished. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_json_parse_aa795b7d5352f1aeae7b0d343ee6b634b}{populate\+Data}} (const QJson\+Array \&json\+Array)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_json_parse_aa795b7d5352f1aeae7b0d343ee6b634b}{Json\+Parse\+::populate\+Data}} parse the json data from Google Books API. \end{DoxyCompactList}\item 
+QList$<$ \mbox{\hyperlink{class_book}{Book}} $>$ \mbox{\hyperlink{class_json_parse_ac3a8f06c25fed0aeefb1561b50bce645}{get\+Book\+List}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the book list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_json_parse_a81e3c5b3dccf08dccf0153d66b929fbc}{process\+Json}} (const QJson\+Object \&json\+Object)
+\begin{DoxyCompactList}\small\item\em This function parses the json object and returns true if the json object is valid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_json_parse_a1c650e9c2def1533fca617ec0cf1fa49}{process\+Json\+Array}} (const QJson\+Array \&json\+Array)
+\begin{DoxyCompactList}\small\item\em This function parses the json array and returns true if the json array is valid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_json_parse_a4eadc5e07ef5bb14cef2339f975cb853}{process\+Key\+Value}} (const QString \&key, const QJson\+Value \&value)
+\begin{DoxyCompactList}\small\item\em process\+Key\+Value \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class handles the json parser. It contains the functions for parsing json. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_json_parse_aeeb24281844c613132bc4a1ec7b93524}\label{class_json_parse_aeeb24281844c613132bc4a1ec7b93524}} 
-{\bfseries Json\+Parse} (QObject $\ast$parent=nullptr)
-\item 
-\mbox{\Hypertarget{class_json_parse_a8441d6622f0dd08f5bbd741626596ed4}\label{class_json_parse_a8441d6622f0dd08f5bbd741626596ed4}} 
-bool {\bfseries parse\+Json} (const QString \&json\+String)
-\item 
-\mbox{\Hypertarget{class_json_parse_aaba45abcf2ed85cfbcc41884439be511}\label{class_json_parse_aaba45abcf2ed85cfbcc41884439be511}} 
-void {\bfseries print\+Data} ()
-\item 
-\mbox{\Hypertarget{class_json_parse_aa795b7d5352f1aeae7b0d343ee6b634b}\label{class_json_parse_aa795b7d5352f1aeae7b0d343ee6b634b}} 
-void {\bfseries populate\+Data} (const QJson\+Array \&json\+Array)
-\item 
+\index{JsonParse@{JsonParse}!JsonParse@{JsonParse}}
+\index{JsonParse@{JsonParse}!JsonParse@{JsonParse}}
+\doxysubsubsection{\texorpdfstring{JsonParse()}{JsonParse()}}
+{\footnotesize\ttfamily Json\+Parse\+::\+Json\+Parse (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_json_parse}{Json\+Parse}} explicit constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_json_parse_ac3a8f06c25fed0aeefb1561b50bce645}\label{class_json_parse_ac3a8f06c25fed0aeefb1561b50bce645}} 
-QList$<$ \mbox{\hyperlink{class_book}{Book}} $>$ {\bfseries get\+Book\+List} ()
-\item 
-\mbox{\Hypertarget{class_json_parse_a81e3c5b3dccf08dccf0153d66b929fbc}\label{class_json_parse_a81e3c5b3dccf08dccf0153d66b929fbc}} 
-void {\bfseries process\+Json} (const QJson\+Object \&json\+Object)
-\item 
+\index{JsonParse@{JsonParse}!getBookList@{getBookList}}
+\index{getBookList@{getBookList}!JsonParse@{JsonParse}}
+\doxysubsubsection{\texorpdfstring{getBookList()}{getBookList()}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_book}{Book}} $>$ Json\+Parse\+::get\+Book\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function returns the book list. 
+
+\begin{DoxyReturn}{Returns}
+QList$<$\+Book$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_json_parse_a8441d6622f0dd08f5bbd741626596ed4}\label{class_json_parse_a8441d6622f0dd08f5bbd741626596ed4}} 
+\index{JsonParse@{JsonParse}!parseJson@{parseJson}}
+\index{parseJson@{parseJson}!JsonParse@{JsonParse}}
+\doxysubsubsection{\texorpdfstring{parseJson()}{parseJson()}}
+{\footnotesize\ttfamily bool Json\+Parse\+::parse\+Json (\begin{DoxyParamCaption}\item[{const QString \&}]{json\+Data }\end{DoxyParamCaption})}
+
+
+
+This function parses the json string and returns true if the json string is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Data} & The json string to be parsed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_json_parse_aa795b7d5352f1aeae7b0d343ee6b634b}\label{class_json_parse_aa795b7d5352f1aeae7b0d343ee6b634b}} 
+\index{JsonParse@{JsonParse}!populateData@{populateData}}
+\index{populateData@{populateData}!JsonParse@{JsonParse}}
+\doxysubsubsection{\texorpdfstring{populateData()}{populateData()}}
+{\footnotesize\ttfamily void Json\+Parse\+::populate\+Data (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{json\+Array }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_json_parse_aa795b7d5352f1aeae7b0d343ee6b634b}{Json\+Parse\+::populate\+Data}} parse the json data from Google Books API. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Array} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_json_parse_aaba45abcf2ed85cfbcc41884439be511}\label{class_json_parse_aaba45abcf2ed85cfbcc41884439be511}} 
+\index{JsonParse@{JsonParse}!printData@{printData}}
+\index{printData@{printData}!JsonParse@{JsonParse}}
+\doxysubsubsection{\texorpdfstring{printData()}{printData()}}
+{\footnotesize\ttfamily void Json\+Parse\+::print\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function parses the key-\/value pair and returns true if the key-\/value pair is valid. Unfinished. 
+
+This function prints the data to the console. \mbox{\Hypertarget{class_json_parse_a81e3c5b3dccf08dccf0153d66b929fbc}\label{class_json_parse_a81e3c5b3dccf08dccf0153d66b929fbc}} 
+\index{JsonParse@{JsonParse}!processJson@{processJson}}
+\index{processJson@{processJson}!JsonParse@{JsonParse}}
+\doxysubsubsection{\texorpdfstring{processJson()}{processJson()}}
+{\footnotesize\ttfamily void Json\+Parse\+::process\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json\+Object }\end{DoxyParamCaption})}
+
+
+
+This function parses the json object and returns true if the json object is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Object} & The json object to be parsed \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_json_parse_a1c650e9c2def1533fca617ec0cf1fa49}\label{class_json_parse_a1c650e9c2def1533fca617ec0cf1fa49}} 
-void {\bfseries process\+Json\+Array} (const QJson\+Array \&json\+Array)
-\item 
+\index{JsonParse@{JsonParse}!processJsonArray@{processJsonArray}}
+\index{processJsonArray@{processJsonArray}!JsonParse@{JsonParse}}
+\doxysubsubsection{\texorpdfstring{processJsonArray()}{processJsonArray()}}
+{\footnotesize\ttfamily void Json\+Parse\+::process\+Json\+Array (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{json\+Array }\end{DoxyParamCaption})}
+
+
+
+This function parses the json array and returns true if the json array is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Array} & The json array to be parsed \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_json_parse_a4eadc5e07ef5bb14cef2339f975cb853}\label{class_json_parse_a4eadc5e07ef5bb14cef2339f975cb853}} 
-void {\bfseries process\+Key\+Value} (const QString \&key, const QJson\+Value \&value)
-\end{DoxyCompactItemize}
+\index{JsonParse@{JsonParse}!processKeyValue@{processKeyValue}}
+\index{processKeyValue@{processKeyValue}!JsonParse@{JsonParse}}
+\doxysubsubsection{\texorpdfstring{processKeyValue()}{processKeyValue()}}
+{\footnotesize\ttfamily void Json\+Parse\+::process\+Key\+Value (\begin{DoxyParamCaption}\item[{const QString \&}]{key,  }\item[{const QJson\+Value \&}]{value }\end{DoxyParamCaption})}
+
+
+
+process\+Key\+Value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 D\+:/\+Book\+App/jsonparse.\+h\item 
-D\+:/\+Book\+App/jsonparse (1).\+cpp\item 
 D\+:/\+Book\+App/jsonparse.\+cpp\end{DoxyCompactItemize}

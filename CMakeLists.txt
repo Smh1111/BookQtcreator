@@ -13,24 +13,22 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network Core Test)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network Core Test)
 
 set(PROJECT_SOURCES
-        main.cpp
-        homepage.cpp
-        homepage.h
-        homepage.ui
-        api_logic.h
-        api_logic.cpp
-        apiparameters.h
-        apiparameters.cpp
-        jsonparse.h
-        jsonparse.cpp
-        book.h
-        book.cpp
-        searchresultwindow.cpp
-        searchresultwindow.h
-        bookdetailswindow.h
-        bookdetailswindow.cpp
-        #test/testings.h
-        #test/testings.cpp
+    main.cpp
+    homepage.cpp
+    homepage.h
+    homepage.ui
+    api_logic.h
+    api_logic.cpp
+    apiparameters.h
+    apiparameters.cpp
+    jsonparse.h
+    jsonparse.cpp
+    book.h
+    book.cpp
+    searchresultwindow.cpp
+    searchresultwindow.h
+    bookdetailswindow.h
+    bookdetailswindow.cpp
 )
 
 # Find Doxygen package
@@ -48,6 +46,54 @@ if(DOXYGEN_FOUND)
     add_custom_target(docs COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 endif()
 
+
+# Test files
+set(TEST_SOURCES
+    test/test_main.cpp
+
+    test/test_book.cpp
+    book.cpp
+
+    test/test_apiLogic.cpp
+    api_logic.cpp
+
+    test/test_apiParameters.cpp
+    apiparameters.cpp
+
+    test/test_bookDetailswindow.cpp
+    bookdetailswindow.cpp
+
+    test/test_homePage.cpp
+    homepage.cpp
+
+    test/test_jsonParse.cpp
+    jsonparse.cpp
+
+    test/test_searchResultwindow.cpp
+    searchresultwindow.cpp
+)
+
+# Create the test executable
+add_executable(BookAppTests ${TEST_SOURCES})
+
+target_link_libraries(BookAppTests PRIVATE
+    Qt${QT_VERSION_MAJOR}::Test
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Network
+    Qt${QT_VERSION_MAJOR}::Core
+
+)
+
+
+add_test(NAME BookAppTests COMMAND BookAppTests)
+
+# Add each individual test case as a test
+foreach(TEST_SOURCE ${TEST_SOURCES})
+    get_filename_component(TEST_NAME ${TEST_SOURCE} NAME_WE)
+    add_test(NAME ${TEST_NAME} COMMAND BookAppTests ${TEST_NAME})
+endforeach()
+
+# Link the main executable with the necessary libraries
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(BookApp
         MANUAL_FINALIZATION
@@ -71,16 +117,9 @@ else()
     endif()
 endif()
 
-target_link_libraries(BookApp PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Test)
 
-set_target_properties(BookApp PROPERTIES
-    MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
-    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    MACOSX_BUNDLE TRUE
-    WIN32_EXECUTABLE TRUE
-)
-
+# Link the main executable with the necessary libraries
+target_link_libraries(BookApp PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network Qt${QT_VERSION_MAJOR}::Core)
 install(TARGETS BookApp
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

@@ -74,36 +74,39 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef APIPARAMETERS_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define APIPARAMETERS_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QUrlQuery&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QMap&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_api_parameters.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="class_api_parameters.html">ApiParameters</a>: <span class="keyword">public</span> QObject</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_api_parameters.html">ApiParameters</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">void</span> setQuery(<span class="keyword">const</span> QString&amp; query, <span class="keywordtype">int</span> maxResult);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    QString getQueryString() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QUrlQuery&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;QMap&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// Dynamic parameter handling</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">void</span> setParameter(<span class="keyword">const</span> QString&amp; key, <span class="keyword">const</span> QString&amp; value);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> removeParameter(<span class="keyword">const</span> QString&amp; key);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    QUrl buildRequestUrl(<span class="keyword">const</span> QUrl&amp; baseUrl) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    QUrlQuery urlQuery;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_api_parameters.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="class_api_parameters.html">ApiParameters</a>: <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_api_parameters.html">ApiParameters</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif </span><span class="comment">// APIPARAMETERS_H</span></div>
-<div class="ttc" id="aclass_api_parameters_html"><div class="ttname"><a href="class_api_parameters.html">ApiParameters</a></div><div class="ttdef"><b>Definition:</b> apiparameters.h:10</div></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_api_parameters.html#ad00f4d9cfd44dd87b8fedf54c08b5c0f">setQuery</a>(<span class="keyword">const</span> QString&amp; query, <span class="keywordtype">int</span> maxResult); <span class="comment">// Set the query string and the max result</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    QString <a class="code hl_function" href="class_api_parameters.html#a65afaf1699a04d821de1f791a7f4dad7">getQueryString</a>() <span class="keyword">const</span>; <span class="comment">// Get the query string</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// Dynamic parameter handling</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_api_parameters.html#ad3355a163f7fe93c587c73502eaaab8b">   45</a></span><span class="comment"></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_api_parameters.html#ad3355a163f7fe93c587c73502eaaab8b">setParameter</a>(<span class="keyword">const</span> QString&amp; key, <span class="keyword">const</span> QString&amp; value);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_api_parameters.html#a2dc7cc7a474bceb23df57de740eb6f02">   50</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_api_parameters.html#a2dc7cc7a474bceb23df57de740eb6f02">removeParameter</a>(<span class="keyword">const</span> QString&amp; key);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_api_parameters.html#a4618e32d4b10de3374ca8786de05a129">   56</a></span>    QUrl <a class="code hl_function" href="class_api_parameters.html#a4618e32d4b10de3374ca8786de05a129">buildRequestUrl</a>(<span class="keyword">const</span> QUrl&amp; baseUrl) <span class="keyword">const</span>; <span class="comment">// Build the request url with the base url and the query string</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    QUrlQuery urlQuery;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif </span><span class="comment">// APIPARAMETERS_H</span></div>
+<div class="ttc" id="aclass_api_parameters_html"><div class="ttname"><a href="class_api_parameters.html">ApiParameters</a></div><div class="ttdoc">This class handles logic about the api parameters. It contains the setter and getter functions for th...</div><div class="ttdef"><b>Definition:</b> apiparameters.h:23</div></div>
+<div class="ttc" id="aclass_api_parameters_html_a2dc7cc7a474bceb23df57de740eb6f02"><div class="ttname"><a href="class_api_parameters.html#a2dc7cc7a474bceb23df57de740eb6f02">ApiParameters::removeParameter</a></div><div class="ttdeci">void removeParameter(const QString &amp;key)</div><div class="ttdoc">removeParameter</div></div>
+<div class="ttc" id="aclass_api_parameters_html_a4618e32d4b10de3374ca8786de05a129"><div class="ttname"><a href="class_api_parameters.html#a4618e32d4b10de3374ca8786de05a129">ApiParameters::buildRequestUrl</a></div><div class="ttdeci">QUrl buildRequestUrl(const QUrl &amp;baseUrl) const</div><div class="ttdoc">buildRequestUrl</div></div>
+<div class="ttc" id="aclass_api_parameters_html_a65afaf1699a04d821de1f791a7f4dad7"><div class="ttname"><a href="class_api_parameters.html#a65afaf1699a04d821de1f791a7f4dad7">ApiParameters::getQueryString</a></div><div class="ttdeci">QString getQueryString() const</div><div class="ttdoc">getQueryString</div><div class="ttdef"><b>Definition:</b> apiparameters.cpp:37</div></div>
+<div class="ttc" id="aclass_api_parameters_html_ad00f4d9cfd44dd87b8fedf54c08b5c0f"><div class="ttname"><a href="class_api_parameters.html#ad00f4d9cfd44dd87b8fedf54c08b5c0f">ApiParameters::setQuery</a></div><div class="ttdeci">void setQuery(const QString &amp;query, int maxResult)</div><div class="ttdoc">This function sets the query string and the max result. It also sets the order by and the api key....</div><div class="ttdef"><b>Definition:</b> apiparameters.cpp:17</div></div>
+<div class="ttc" id="aclass_api_parameters_html_ad3355a163f7fe93c587c73502eaaab8b"><div class="ttname"><a href="class_api_parameters.html#ad3355a163f7fe93c587c73502eaaab8b">ApiParameters::setParameter</a></div><div class="ttdeci">void setParameter(const QString &amp;key, const QString &amp;value)</div><div class="ttdoc">setParameter</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

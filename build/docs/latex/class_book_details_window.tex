@@ -1,5 +1,14 @@
 \hypertarget{class_book_details_window}{}\doxysection{Book\+Details\+Window Class Reference}
 \label{class_book_details_window}\index{BookDetailsWindow@{BookDetailsWindow}}
+
+
+This class handles the book details window. It contains the necessary widgets for displaying book details.  
+
+
+
+
+{\ttfamily \#include $<$bookdetailswindow.\+h$>$}
+
 Inheritance diagram for Book\+Details\+Window\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,12 +18,56 @@ Inheritance diagram for Book\+Details\+Window\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_book_details_window_af8c4d3c62c016f831006e7bb0984b04d}{Book\+Details\+Window}} (const \mbox{\hyperlink{class_book}{Book}} \&book, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_book}{Book}} Details Window\+:\+: \mbox{\hyperlink{class_book}{Book}} Details Window object. \end{DoxyCompactList}\item 
+QByte\+Array \mbox{\hyperlink{class_book_details_window_ab85a96e8dd232542dd3a9827d5268827}{download\+Image\+Data}} (const QString \&url)
+\begin{DoxyCompactList}\small\item\em This function downloads the image data from the url. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class handles the book details window. It contains the necessary widgets for displaying book details. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_book_details_window_af8c4d3c62c016f831006e7bb0984b04d}\label{class_book_details_window_af8c4d3c62c016f831006e7bb0984b04d}} 
-{\bfseries Book\+Details\+Window} (const \mbox{\hyperlink{class_book}{Book}} \&book, QWidget $\ast$parent=nullptr)
-\item 
+\index{BookDetailsWindow@{BookDetailsWindow}!BookDetailsWindow@{BookDetailsWindow}}
+\index{BookDetailsWindow@{BookDetailsWindow}!BookDetailsWindow@{BookDetailsWindow}}
+\doxysubsubsection{\texorpdfstring{BookDetailsWindow()}{BookDetailsWindow()}}
+{\footnotesize\ttfamily Book\+Details\+Window\+::\+Book\+Details\+Window (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_book}{Book}} \&}]{book,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_book}{Book}} Details Window\+:\+: \mbox{\hyperlink{class_book}{Book}} Details Window object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em book} & The book object to display the details of. \\
+\hline
+{\em parent} & The parent widget. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_book_details_window_ab85a96e8dd232542dd3a9827d5268827}\label{class_book_details_window_ab85a96e8dd232542dd3a9827d5268827}} 
-QByte\+Array {\bfseries download\+Image\+Data} (const QString \&url)
-\end{DoxyCompactItemize}
+\index{BookDetailsWindow@{BookDetailsWindow}!downloadImageData@{downloadImageData}}
+\index{downloadImageData@{downloadImageData}!BookDetailsWindow@{BookDetailsWindow}}
+\doxysubsubsection{\texorpdfstring{downloadImageData()}{downloadImageData()}}
+{\footnotesize\ttfamily QByte\+Array Book\+Details\+Window\+::download\+Image\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{url }\end{DoxyParamCaption})}
+
+
+
+This function downloads the image data from the url. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The url of the image. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QByte\+Array The image data. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

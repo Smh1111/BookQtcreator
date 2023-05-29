@@ -1,5 +1,14 @@
 \hypertarget{class_api_parameters}{}\doxysection{Api\+Parameters Class Reference}
 \label{class_api_parameters}\index{ApiParameters@{ApiParameters}}
+
+
+This class handles logic about the api parameters. It contains the setter and getter functions for the api parameters.  
+
+
+
+
+{\ttfamily \#include $<$apiparameters.\+h$>$}
+
 Inheritance diagram for Api\+Parameters\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,24 +18,121 @@ Inheritance diagram for Api\+Parameters\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_api_parameters_a82e94f1241707f870aac91a02956d547}{Api\+Parameters}} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_api_parameters}{Api\+Parameters}} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_parameters_ad00f4d9cfd44dd87b8fedf54c08b5c0f}{set\+Query}} (const QString \&query, int max\+Result)
+\begin{DoxyCompactList}\small\item\em This function sets the query string and the max result. It also sets the order by and the api key. The query string is the search term. The max result is the number of results to be shown. The order by is showing the newest books first. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_api_parameters_a65afaf1699a04d821de1f791a7f4dad7}{get\+Query\+String}} () const
+\begin{DoxyCompactList}\small\item\em get\+Query\+String \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_parameters_ad3355a163f7fe93c587c73502eaaab8b}{set\+Parameter}} (const QString \&key, const QString \&value)
+\begin{DoxyCompactList}\small\item\em set\+Parameter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_parameters_a2dc7cc7a474bceb23df57de740eb6f02}{remove\+Parameter}} (const QString \&key)
+\begin{DoxyCompactList}\small\item\em remove\+Parameter \end{DoxyCompactList}\item 
+QUrl \mbox{\hyperlink{class_api_parameters_a4618e32d4b10de3374ca8786de05a129}{build\+Request\+Url}} (const QUrl \&base\+Url) const
+\begin{DoxyCompactList}\small\item\em build\+Request\+Url \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class handles logic about the api parameters. It contains the setter and getter functions for the api parameters. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_api_parameters_a82e94f1241707f870aac91a02956d547}\label{class_api_parameters_a82e94f1241707f870aac91a02956d547}} 
-{\bfseries Api\+Parameters} (QObject $\ast$parent=nullptr)
-\item 
-\mbox{\Hypertarget{class_api_parameters_ad00f4d9cfd44dd87b8fedf54c08b5c0f}\label{class_api_parameters_ad00f4d9cfd44dd87b8fedf54c08b5c0f}} 
-void {\bfseries set\+Query} (const QString \&query, int max\+Result)
-\item 
-\mbox{\Hypertarget{class_api_parameters_a65afaf1699a04d821de1f791a7f4dad7}\label{class_api_parameters_a65afaf1699a04d821de1f791a7f4dad7}} 
-QString {\bfseries get\+Query\+String} () const
-\item 
-\mbox{\Hypertarget{class_api_parameters_ad3355a163f7fe93c587c73502eaaab8b}\label{class_api_parameters_ad3355a163f7fe93c587c73502eaaab8b}} 
-void {\bfseries set\+Parameter} (const QString \&key, const QString \&value)
-\item 
-\mbox{\Hypertarget{class_api_parameters_a2dc7cc7a474bceb23df57de740eb6f02}\label{class_api_parameters_a2dc7cc7a474bceb23df57de740eb6f02}} 
-void {\bfseries remove\+Parameter} (const QString \&key)
-\item 
+\index{ApiParameters@{ApiParameters}!ApiParameters@{ApiParameters}}
+\index{ApiParameters@{ApiParameters}!ApiParameters@{ApiParameters}}
+\doxysubsubsection{\texorpdfstring{ApiParameters()}{ApiParameters()}}
+{\footnotesize\ttfamily Api\+Parameters\+::\+Api\+Parameters (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_api_parameters}{Api\+Parameters}} constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_api_parameters_a4618e32d4b10de3374ca8786de05a129}\label{class_api_parameters_a4618e32d4b10de3374ca8786de05a129}} 
-QUrl {\bfseries build\+Request\+Url} (const QUrl \&base\+Url) const
-\end{DoxyCompactItemize}
+\index{ApiParameters@{ApiParameters}!buildRequestUrl@{buildRequestUrl}}
+\index{buildRequestUrl@{buildRequestUrl}!ApiParameters@{ApiParameters}}
+\doxysubsubsection{\texorpdfstring{buildRequestUrl()}{buildRequestUrl()}}
+{\footnotesize\ttfamily QUrl Api\+Parameters\+::build\+Request\+Url (\begin{DoxyParamCaption}\item[{const QUrl \&}]{base\+Url }\end{DoxyParamCaption}) const}
+
+
+
+build\+Request\+Url 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Url} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QUrl 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_parameters_a65afaf1699a04d821de1f791a7f4dad7}\label{class_api_parameters_a65afaf1699a04d821de1f791a7f4dad7}} 
+\index{ApiParameters@{ApiParameters}!getQueryString@{getQueryString}}
+\index{getQueryString@{getQueryString}!ApiParameters@{ApiParameters}}
+\doxysubsubsection{\texorpdfstring{getQueryString()}{getQueryString()}}
+{\footnotesize\ttfamily QString Api\+Parameters\+::get\+Query\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Query\+String 
+
+\begin{DoxyReturn}{Returns}
+QString 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_parameters_a2dc7cc7a474bceb23df57de740eb6f02}\label{class_api_parameters_a2dc7cc7a474bceb23df57de740eb6f02}} 
+\index{ApiParameters@{ApiParameters}!removeParameter@{removeParameter}}
+\index{removeParameter@{removeParameter}!ApiParameters@{ApiParameters}}
+\doxysubsubsection{\texorpdfstring{removeParameter()}{removeParameter()}}
+{\footnotesize\ttfamily void Api\+Parameters\+::remove\+Parameter (\begin{DoxyParamCaption}\item[{const QString \&}]{key }\end{DoxyParamCaption})}
+
+
+
+remove\+Parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_api_parameters_ad3355a163f7fe93c587c73502eaaab8b}\label{class_api_parameters_ad3355a163f7fe93c587c73502eaaab8b}} 
+\index{ApiParameters@{ApiParameters}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!ApiParameters@{ApiParameters}}
+\doxysubsubsection{\texorpdfstring{setParameter()}{setParameter()}}
+{\footnotesize\ttfamily void Api\+Parameters\+::set\+Parameter (\begin{DoxyParamCaption}\item[{const QString \&}]{key,  }\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_api_parameters_ad00f4d9cfd44dd87b8fedf54c08b5c0f}\label{class_api_parameters_ad00f4d9cfd44dd87b8fedf54c08b5c0f}} 
+\index{ApiParameters@{ApiParameters}!setQuery@{setQuery}}
+\index{setQuery@{setQuery}!ApiParameters@{ApiParameters}}
+\doxysubsubsection{\texorpdfstring{setQuery()}{setQuery()}}
+{\footnotesize\ttfamily void Api\+Parameters\+::set\+Query (\begin{DoxyParamCaption}\item[{const QString \&}]{query,  }\item[{int}]{max\+Result }\end{DoxyParamCaption})}
+
+
+
+This function sets the query string and the max result. It also sets the order by and the api key. The query string is the search term. The max result is the number of results to be shown. The order by is showing the newest books first. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & ~\newline
+ \\
+\hline
+{\em max\+Result} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

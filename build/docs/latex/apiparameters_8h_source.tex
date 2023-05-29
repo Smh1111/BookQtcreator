@@ -3,34 +3,32 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef APIPARAMETERS\_H}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define APIPARAMETERS\_H}}
-\DoxyCodeLine{3 }
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QObject>}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QString>}}
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QUrlQuery>}}
-\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QMap>}}
-\DoxyCodeLine{8 }
-\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_api_parameters}{ApiParameters}}: \textcolor{keyword}{public} QObject}
-\DoxyCodeLine{10 \{}
-\DoxyCodeLine{11 \textcolor{keyword}{public}:}
-\DoxyCodeLine{12     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_api_parameters}{ApiParameters}}(QObject *parent = \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{13 }
-\DoxyCodeLine{14     \textcolor{keywordtype}{void} setQuery(\textcolor{keyword}{const} QString\& query, \textcolor{keywordtype}{int} maxResult);}
-\DoxyCodeLine{15 }
-\DoxyCodeLine{16     QString getQueryString() \textcolor{keyword}{const};}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <QString>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <QUrlQuery>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <QMap>}}
 \DoxyCodeLine{17 }
-\DoxyCodeLine{18     \textcolor{comment}{// Dynamic parameter handling}}
-\DoxyCodeLine{19 }
-\DoxyCodeLine{20     \textcolor{keywordtype}{void} setParameter(\textcolor{keyword}{const} QString\& key, \textcolor{keyword}{const} QString\& value);}
-\DoxyCodeLine{21     \textcolor{keywordtype}{void} removeParameter(\textcolor{keyword}{const} QString\& key);}
-\DoxyCodeLine{22     QUrl buildRequestUrl(\textcolor{keyword}{const} QUrl\& baseUrl) \textcolor{keyword}{const};}
-\DoxyCodeLine{23 }
-\DoxyCodeLine{24 }
-\DoxyCodeLine{25 \textcolor{keyword}{private}:}
-\DoxyCodeLine{26     QUrlQuery urlQuery;}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29 \};}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_api_parameters}{ApiParameters}}: \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{29     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_api_parameters}{ApiParameters}}(QObject *parent = \textcolor{keyword}{nullptr});}
 \DoxyCodeLine{30 }
-\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// APIPARAMETERS\_H}}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_api_parameters_ad00f4d9cfd44dd87b8fedf54c08b5c0f}{setQuery}}(\textcolor{keyword}{const} QString\& query, \textcolor{keywordtype}{int} maxResult); \textcolor{comment}{// Set the query string and the max result}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{37     QString \mbox{\hyperlink{class_api_parameters_a65afaf1699a04d821de1f791a7f4dad7}{getQueryString}}() \textcolor{keyword}{const}; \textcolor{comment}{// Get the query string}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{comment}{// Dynamic parameter handling}}
+\DoxyCodeLine{45 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_api_parameters_ad3355a163f7fe93c587c73502eaaab8b}{setParameter}}(\textcolor{keyword}{const} QString\& key, \textcolor{keyword}{const} QString\& value);}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_api_parameters_a2dc7cc7a474bceb23df57de740eb6f02}{removeParameter}}(\textcolor{keyword}{const} QString\& key);}
+\DoxyCodeLine{56     QUrl \mbox{\hyperlink{class_api_parameters_a4618e32d4b10de3374ca8786de05a129}{buildRequestUrl}}(\textcolor{keyword}{const} QUrl\& baseUrl) \textcolor{keyword}{const}; \textcolor{comment}{// Build the request url with the base url and the query string}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{private}:}
+\DoxyCodeLine{60     QUrlQuery urlQuery;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// APIPARAMETERS\_H}}
 
 \end{DoxyCode}

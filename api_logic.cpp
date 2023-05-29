@@ -1,11 +1,21 @@
 #include "api_logic.h"
 #include "QDebug"
 
+/**
+ * @brief Construct a new Api_Logic::Api_Logic object
+ * 
+ * @param parent 
+ */
 Api_Logic::Api_Logic(QObject *parent) : QObject(parent)
 {
     networkManager = new QNetworkAccessManager(this);
 }
 
+/**
+ * @brief This function makes the api call to the google book api.
+ * 
+ * @param query The query string for the api call.
+ */
 void Api_Logic::makeApiCall(const QString& query)
 {
 
@@ -27,6 +37,11 @@ void Api_Logic::makeApiCall(const QString& query)
     });
 }
 
+/**
+ * @brief This function handles the api reply.
+ * 
+ * @param reply The reply from the api call.
+ */
 void Api_Logic::handleApiReply(QNetworkReply *reply)
 {
     if (reply->error() == QNetworkReply::NoError) {
@@ -34,6 +49,8 @@ void Api_Logic::handleApiReply(QNetworkReply *reply)
         emit apiResponseReceived(response);
     } else {
         // Handle error
+        emit apiErrorOccurred(reply->error(), reply->errorString());
+
 
     }
 }

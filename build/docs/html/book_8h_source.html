@@ -76,67 +76,80 @@ $(function() {
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BOOK_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QStringList&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_book.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_book.html">Book</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_class" href="class_book.html">Book</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// Title</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">void</span> setTitle           (QString        Title);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">const</span> QString&amp; <a class="code hl_function" href="class_book.html#ac9ac170b1fdd039c52a5c3bbb476cf9a">getTitle</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// ISBN</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> setISBN            (QStringList&amp;    isbn);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> setDescription     (QString        description);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> setAuthors         (QStringList&amp;   authors);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> setPublishedDate   (QString        publishedDate);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> setPageCount       (<span class="keywordtype">int</span>            pageCount);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> setImageLinks      (QStringList&amp;       imageLinks);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> setInfoLink        (QString        infoLink);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> setPreviewLink     (QString        previewLink);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> QStringList&amp; getISBNList() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    QString getISBN()   <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">const</span> QString&amp; getDescription() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> QStringList&amp; getAuthors() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">const</span> QString&amp; getPublishedDate() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">int</span> getPageCount() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">const</span> QStringList&amp; getImageLinks() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">const</span> QString&amp; getInfoLink() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">const</span> QString&amp; getPreviewLink() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    QString getInformationLink() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    QString getImageUrl() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// Book collections</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    QString         title           ;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    QStringList        isbn         ;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    QStringList     authors         ;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    QString         publishedDate   ;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">// For Book Details</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    QString         description     ;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    QStringList     imageList       ;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    QString         infoLink        ;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">int</span>             pageCount       ;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    QString         previewLink     ;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    QString         buyLink         ;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif </span><span class="comment">// BOOK_H</span></div>
-<div class="ttc" id="aclass_book_html"><div class="ttname"><a href="class_book.html">Book</a></div><div class="ttdoc">A class representing a book in the BookFinder app.</div><div class="ttdef"><b>Definition:</b> book.h:10</div></div>
-<div class="ttc" id="aclass_book_html_ac9ac170b1fdd039c52a5c3bbb476cf9a"><div class="ttname"><a href="class_book.html#ac9ac170b1fdd039c52a5c3bbb476cf9a">Book::getTitle</a></div><div class="ttdeci">const QString &amp; getTitle() const</div><div class="ttdoc">Get the title of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:46</div></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_book.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="class_book.html">Book</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_class" href="class_book.html">Book</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_book.html#a167c89c453ae3e54bdce0f62bb3897f4">setTitle</a>           (QString        Title);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">const</span> QString&amp; <a class="code hl_function" href="class_book.html#ac9ac170b1fdd039c52a5c3bbb476cf9a">getTitle</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_book.html#aaead8d0a55dbf23d5b0f3bbca1201466">setISBN</a>            (QStringList&amp;    isbn);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_book.html#a3b962c33a4d233f3515aea4050988bb0">setDescription</a>     (QString        description);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_book.html#a95119c6b40e67775b6b33f5ea86e2cf8">setAuthors</a>         (QStringList&amp;   authors);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_book.html#a99908ab5afa747c2a2f1c9ab3ced6061">setPublishedDate</a>   (QString        publishedDate);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_book.html#a3fb78fc32e29292c944216989a6b62a7">setPageCount</a>       (<span class="keywordtype">int</span>            pageCount);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_book.html#a4ca64776eddc51f543f8bf6e2d05eca4">setImageLinks</a>      (QStringList&amp;       imageLinks);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_book.html#a64bc483164356ef4a1d49b07c5732b6f">setInfoLink</a>        (QString        infoLink);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_book.html#a572aa23cd4e2e6cee4580a193ad23454">setPreviewLink</a>     (QString        previewLink);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">const</span> QStringList&amp; <a class="code hl_function" href="class_book.html#ac8bcf6e4a64e8dc66d0fe271e72e004c">getISBNList</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    QString <a class="code hl_function" href="class_book.html#a448420d674ab2f75ad6b29386caef660">getISBN</a>()   <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">const</span> QString&amp; <a class="code hl_function" href="class_book.html#a74fdf253e890ae320e119699572d2122">getDescription</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">const</span> QStringList&amp; <a class="code hl_function" href="class_book.html#a38d8ddb51387ccb7f80f0d2654fedb89">getAuthors</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">const</span> QString&amp; <a class="code hl_function" href="class_book.html#a4658e53629fee1fbb9c835bdd5dea7cb">getPublishedDate</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_book.html#ac3ac6dc111ba57eb94bfbc7e8d4396be">getPageCount</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keyword">const</span> QStringList&amp; <a class="code hl_function" href="class_book.html#aa608e007fd56ca69f027e4f30b857d05">getImageLinks</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">const</span> QString&amp; <a class="code hl_function" href="class_book.html#af81f56585fcc2566407c5fafb30575cf">getInfoLink</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keyword">const</span> QString&amp; <a class="code hl_function" href="class_book.html#a0d08b3ef39a1ac20185533a1da4a527d">getPreviewLink</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    QString <a class="code hl_function" href="class_book.html#a44e3bfc7d2f2acbda561198a4d0d5095">getInformationLink</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    QString <a class="code hl_function" href="class_book.html#ae6bc277260e8d16110173e8da58a9a09">getImageUrl</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    QString         title           ;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    QStringList        isbn         ;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    QStringList     authors         ;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    QString         publishedDate   ;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    QString         description     ;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    QStringList     imageList       ;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    QString         infoLink        ;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordtype">int</span>             pageCount       ;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    QString         previewLink     ;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    QString         buyLink         ;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>};</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">#endif </span><span class="comment">// BOOK_H</span></div>
+<div class="ttc" id="aclass_book_html"><div class="ttname"><a href="class_book.html">Book</a></div><div class="ttdoc">This class handles the data structure of the book object. It contains the setter and getter functions...</div><div class="ttdef"><b>Definition:</b> book.h:20</div></div>
+<div class="ttc" id="aclass_book_html_a0d08b3ef39a1ac20185533a1da4a527d"><div class="ttname"><a href="class_book.html#a0d08b3ef39a1ac20185533a1da4a527d">Book::getPreviewLink</a></div><div class="ttdeci">const QString &amp; getPreviewLink() const</div><div class="ttdoc">Get the preview link of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:166</div></div>
+<div class="ttc" id="aclass_book_html_a167c89c453ae3e54bdce0f62bb3897f4"><div class="ttname"><a href="class_book.html#a167c89c453ae3e54bdce0f62bb3897f4">Book::setTitle</a></div><div class="ttdeci">void setTitle(QString Title)</div><div class="ttdoc">Set the Title object.</div><div class="ttdef"><b>Definition:</b> book.cpp:3</div></div>
+<div class="ttc" id="aclass_book_html_a38d8ddb51387ccb7f80f0d2654fedb89"><div class="ttname"><a href="class_book.html#a38d8ddb51387ccb7f80f0d2654fedb89">Book::getAuthors</a></div><div class="ttdeci">const QStringList &amp; getAuthors() const</div><div class="ttdoc">Get the authors of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:121</div></div>
+<div class="ttc" id="aclass_book_html_a3b962c33a4d233f3515aea4050988bb0"><div class="ttname"><a href="class_book.html#a3b962c33a4d233f3515aea4050988bb0">Book::setDescription</a></div><div class="ttdeci">void setDescription(QString description)</div><div class="ttdoc">Set the description of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:19</div></div>
+<div class="ttc" id="aclass_book_html_a3fb78fc32e29292c944216989a6b62a7"><div class="ttname"><a href="class_book.html#a3fb78fc32e29292c944216989a6b62a7">Book::setPageCount</a></div><div class="ttdeci">void setPageCount(int pageCount)</div><div class="ttdoc">Set the page count of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:43</div></div>
+<div class="ttc" id="aclass_book_html_a448420d674ab2f75ad6b29386caef660"><div class="ttname"><a href="class_book.html#a448420d674ab2f75ad6b29386caef660">Book::getISBN</a></div><div class="ttdeci">QString getISBN() const</div><div class="ttdoc">Get only one isbn number of the book object.</div><div class="ttdef"><b>Definition:</b> book.cpp:97</div></div>
+<div class="ttc" id="aclass_book_html_a44e3bfc7d2f2acbda561198a4d0d5095"><div class="ttname"><a href="class_book.html#a44e3bfc7d2f2acbda561198a4d0d5095">Book::getInformationLink</a></div><div class="ttdeci">QString getInformationLink() const</div><div class="ttdoc">Get the info link of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:175</div></div>
+<div class="ttc" id="aclass_book_html_a4658e53629fee1fbb9c835bdd5dea7cb"><div class="ttname"><a href="class_book.html#a4658e53629fee1fbb9c835bdd5dea7cb">Book::getPublishedDate</a></div><div class="ttdeci">const QString &amp; getPublishedDate() const</div><div class="ttdoc">Get the published date of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:130</div></div>
+<div class="ttc" id="aclass_book_html_a4ca64776eddc51f543f8bf6e2d05eca4"><div class="ttname"><a href="class_book.html#a4ca64776eddc51f543f8bf6e2d05eca4">Book::setImageLinks</a></div><div class="ttdeci">void setImageLinks(QStringList &amp;imageLinks)</div><div class="ttdoc">Set the image links of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:51</div></div>
+<div class="ttc" id="aclass_book_html_a572aa23cd4e2e6cee4580a193ad23454"><div class="ttname"><a href="class_book.html#a572aa23cd4e2e6cee4580a193ad23454">Book::setPreviewLink</a></div><div class="ttdeci">void setPreviewLink(QString previewLink)</div><div class="ttdoc">Set the preview link link of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:68</div></div>
+<div class="ttc" id="aclass_book_html_a64bc483164356ef4a1d49b07c5732b6f"><div class="ttname"><a href="class_book.html#a64bc483164356ef4a1d49b07c5732b6f">Book::setInfoLink</a></div><div class="ttdeci">void setInfoLink(QString infoLink)</div><div class="ttdoc">Set the information link of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:60</div></div>
+<div class="ttc" id="aclass_book_html_a74fdf253e890ae320e119699572d2122"><div class="ttname"><a href="class_book.html#a74fdf253e890ae320e119699572d2122">Book::getDescription</a></div><div class="ttdeci">const QString &amp; getDescription() const</div><div class="ttdoc">Get the description of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:112</div></div>
+<div class="ttc" id="aclass_book_html_a95119c6b40e67775b6b33f5ea86e2cf8"><div class="ttname"><a href="class_book.html#a95119c6b40e67775b6b33f5ea86e2cf8">Book::setAuthors</a></div><div class="ttdeci">void setAuthors(QStringList &amp;authors)</div><div class="ttdoc">Set the authors of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:27</div></div>
+<div class="ttc" id="aclass_book_html_a99908ab5afa747c2a2f1c9ab3ced6061"><div class="ttname"><a href="class_book.html#a99908ab5afa747c2a2f1c9ab3ced6061">Book::setPublishedDate</a></div><div class="ttdeci">void setPublishedDate(QString publishedDate)</div><div class="ttdoc">Set the published date of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:35</div></div>
+<div class="ttc" id="aclass_book_html_aa608e007fd56ca69f027e4f30b857d05"><div class="ttname"><a href="class_book.html#aa608e007fd56ca69f027e4f30b857d05">Book::getImageLinks</a></div><div class="ttdeci">const QStringList &amp; getImageLinks() const</div><div class="ttdoc">Get the image links of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:148</div></div>
+<div class="ttc" id="aclass_book_html_aaead8d0a55dbf23d5b0f3bbca1201466"><div class="ttname"><a href="class_book.html#aaead8d0a55dbf23d5b0f3bbca1201466">Book::setISBN</a></div><div class="ttdeci">void setISBN(QStringList &amp;isbn)</div><div class="ttdoc">Set the ISBN object.</div><div class="ttdef"><b>Definition:</b> book.cpp:11</div></div>
+<div class="ttc" id="aclass_book_html_ac3ac6dc111ba57eb94bfbc7e8d4396be"><div class="ttname"><a href="class_book.html#ac3ac6dc111ba57eb94bfbc7e8d4396be">Book::getPageCount</a></div><div class="ttdeci">int getPageCount() const</div><div class="ttdoc">Get the page count of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:139</div></div>
+<div class="ttc" id="aclass_book_html_ac8bcf6e4a64e8dc66d0fe271e72e004c"><div class="ttname"><a href="class_book.html#ac8bcf6e4a64e8dc66d0fe271e72e004c">Book::getISBNList</a></div><div class="ttdeci">const QStringList &amp; getISBNList() const</div><div class="ttdoc">Get the ISBN lists(eg. isbn10, isbn13) of the book object.</div><div class="ttdef"><b>Definition:</b> book.cpp:88</div></div>
+<div class="ttc" id="aclass_book_html_ac9ac170b1fdd039c52a5c3bbb476cf9a"><div class="ttname"><a href="class_book.html#ac9ac170b1fdd039c52a5c3bbb476cf9a">Book::getTitle</a></div><div class="ttdeci">const QString &amp; getTitle() const</div><div class="ttdoc">Get the title of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:79</div></div>
+<div class="ttc" id="aclass_book_html_ae6bc277260e8d16110173e8da58a9a09"><div class="ttname"><a href="class_book.html#ae6bc277260e8d16110173e8da58a9a09">Book::getImageUrl</a></div><div class="ttdeci">QString getImageUrl() const</div><div class="ttdoc">Get the buy link of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:195</div></div>
+<div class="ttc" id="aclass_book_html_af81f56585fcc2566407c5fafb30575cf"><div class="ttname"><a href="class_book.html#af81f56585fcc2566407c5fafb30575cf">Book::getInfoLink</a></div><div class="ttdeci">const QString &amp; getInfoLink() const</div><div class="ttdoc">Get the information link of the book.</div><div class="ttdef"><b>Definition:</b> book.cpp:157</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -3,56 +3,51 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HOMEPAGE\_H}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define HOMEPAGE\_H}}
-\DoxyCodeLine{3 }
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QMainWindow>}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QWidget>}}
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QPushButton>}}
-\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}api\_logic.h"{}}}
-\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}apiparameters.h"{}}}
-\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}searchresultwindow.h"{}}}
-\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}jsonparse.h"{}}}
-\DoxyCodeLine{11 }
-\DoxyCodeLine{12 }
-\DoxyCodeLine{13 QT\_BEGIN\_NAMESPACE}
-\DoxyCodeLine{14 \textcolor{keyword}{namespace }Ui \{ \textcolor{keyword}{class }\mbox{\hyperlink{class_home_page}{HomePage}}; \}}
-\DoxyCodeLine{15 QT\_END\_NAMESPACE}
-\DoxyCodeLine{16 }
-\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_home_page}{HomePage}} : \textcolor{keyword}{public} QMainWindow}
-\DoxyCodeLine{18 \{}
-\DoxyCodeLine{19     Q\_OBJECT}
-\DoxyCodeLine{20 }
-\DoxyCodeLine{21 \textcolor{keyword}{public}:}
-\DoxyCodeLine{22     \mbox{\hyperlink{class_home_page}{HomePage}}(QWidget *parent = \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{23     \mbox{\hyperlink{class_home_page}{\string~HomePage}}();}
-\DoxyCodeLine{24 }
-\DoxyCodeLine{25 \textcolor{keyword}{private} slots:}
-\DoxyCodeLine{26     \textcolor{keywordtype}{void} handleButtonClicked();}
-\DoxyCodeLine{27     \textcolor{keywordtype}{void} handleApiResponse(QString response);}
-\DoxyCodeLine{28     \textcolor{keywordtype}{void} onImageDownloaded(QNetworkReply* reply);}
-\DoxyCodeLine{29     \textcolor{keywordtype}{void} on\_radioButton\_5\_toggled(\textcolor{keywordtype}{bool} checked);}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31     \textcolor{keywordtype}{void} on\_radioButton\_10\_toggled(\textcolor{keywordtype}{bool} checked);}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33     \textcolor{keywordtype}{void} on\_radioButton\_20\_toggled(\textcolor{keywordtype}{bool} checked);}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35     \textcolor{keywordtype}{void} on\_radioButton\_30\_toggled(\textcolor{keywordtype}{bool} checked);}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <QMainWindow>}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <QPushButton>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}api\_logic.h"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}apiparameters.h"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}searchresultwindow.h"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}jsonparse.h"{}}}
 \DoxyCodeLine{36 }
-\DoxyCodeLine{37     \textcolor{keywordtype}{void} on\_radioButton\_40\_toggled(\textcolor{keywordtype}{bool} checked);}
-\DoxyCodeLine{38 }
-\DoxyCodeLine{39     \textcolor{keywordtype}{void} setMaxResult(\textcolor{keyword}{const} \textcolor{keywordtype}{int}\& maxResult);}
-\DoxyCodeLine{40     \textcolor{keywordtype}{int} getMaxResult() \textcolor{keyword}{const};}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42 \textcolor{keyword}{private}:}
-\DoxyCodeLine{43     Ui::HomePage *ui;}
-\DoxyCodeLine{44     QPushButton *button;}
-\DoxyCodeLine{45     \mbox{\hyperlink{class_api___logic}{Api\_Logic}} *api;}
-\DoxyCodeLine{46     \mbox{\hyperlink{class_json_parse}{JsonParse}} *jsonparse;}
-\DoxyCodeLine{47     \mbox{\hyperlink{class_api_parameters}{ApiParameters}} *apiparameters;}
-\DoxyCodeLine{48     \mbox{\hyperlink{class_search_result_window}{SearchResultWindow}} *searchresultwin;}
-\DoxyCodeLine{49     \textcolor{keywordtype}{int} maxResult = 5;}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51 \};}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// HOMEPAGE\_H}}
+\DoxyCodeLine{37 QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{38 \textcolor{keyword}{namespace }Ui \{ \textcolor{keyword}{class }\mbox{\hyperlink{class_home_page}{HomePage}}; \}}
+\DoxyCodeLine{39 QT\_END\_NAMESPACE}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{class_home_page}{HomePage}} : \textcolor{keyword}{public} QMainWindow}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     Q\_OBJECT}
+\DoxyCodeLine{48 \textcolor{keyword}{public}:}
+\DoxyCodeLine{53     \mbox{\hyperlink{class_home_page}{HomePage}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{58     \mbox{\hyperlink{class_home_page_aff8e741021104752949c6935c7407f90}{\string~HomePage}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} handleButtonClicked();                     \textcolor{comment}{// Search button handler}}
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} handleApiResponse(QString response);       \textcolor{comment}{// Api response handler}}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} onImageDownloaded(QNetworkReply* reply);   \textcolor{comment}{// Image download handler}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{// Radio button handlers}}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} on\_radioButton\_5\_toggled(\textcolor{keywordtype}{bool} checked);}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} on\_radioButton\_10\_toggled(\textcolor{keywordtype}{bool} checked);}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} on\_radioButton\_20\_toggled(\textcolor{keywordtype}{bool} checked);}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} on\_radioButton\_30\_toggled(\textcolor{keywordtype}{bool} checked);}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} on\_radioButton\_40\_toggled(\textcolor{keywordtype}{bool} checked);}
+\DoxyCodeLine{71     }
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} setMaxResult(\textcolor{keyword}{const} \textcolor{keywordtype}{int}\& maxResult);}
+\DoxyCodeLine{73     \textcolor{keywordtype}{int} getMaxResult() \textcolor{keyword}{const};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{private}:}
+\DoxyCodeLine{76     Ui::HomePage *ui;}
+\DoxyCodeLine{77     QPushButton *button;}
+\DoxyCodeLine{78     \mbox{\hyperlink{class_api___logic}{Api\_Logic}} *api;}
+\DoxyCodeLine{79     \mbox{\hyperlink{class_json_parse}{JsonParse}} *jsonparse;}
+\DoxyCodeLine{80     \mbox{\hyperlink{class_api_parameters}{ApiParameters}} *apiparameters;}
+\DoxyCodeLine{81     \mbox{\hyperlink{class_search_result_window}{SearchResultWindow}} *searchresultwin;}
+\DoxyCodeLine{82     \textcolor{keywordtype}{int} maxResult = 5;}
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// HOMEPAGE\_H}}
 
 \end{DoxyCode}

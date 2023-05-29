@@ -18,7 +18,7 @@ HomePage::HomePage(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("Book Finder App");
-    QIcon icon("../BookApp/icons8-book-64.ico");  // Replace with the actual path to your icon file
+    QIcon icon("../BookApp/icons8-book-64.ico"); 
     setWindowIcon(icon);
 
 
@@ -63,15 +63,12 @@ void HomePage::handleButtonClicked()
 {
     QString query = ui->lineEditQuery->text();
 
-    qDebug() << "Query from Ui = " << query;
-
     api = new class Api_Logic(this);
     connect(api, &Api_Logic::apiResponseReceived, this, &HomePage::handleApiResponse);
 
     apiparameters = new class ApiParameters(this);
     apiparameters->setQuery(query,this->getMaxResult());
 
-    //apiCall.makeApiCall(parameters.getQueryString());
     api->makeApiCall(apiparameters->getQueryString());
 }
 
@@ -82,16 +79,19 @@ void HomePage::handleApiResponse(QString response)
     jsonparse->parseJson(response);
     //jsonparse->printData();
 
-    qDebug() << "First author= " << jsonparse->getBookList().takeFirst().getAuthors();
-
-
+    // Create a new window to show the search results
     searchresultwin = new SearchResultWindow(this, jsonparse->getBookList());
-
     searchresultwin->getData();
     this->hide();
     searchresultwin->show();
 
 }
+
+/**
+ * @brief This function downloads the image from the url and sets it as the background image of the widget.
+ * 
+ * @param reply     The reply object that contains the downloaded image data 
+ */
 void HomePage::onImageDownloaded(QNetworkReply* reply)
 {
     if (reply->error() == QNetworkReply::NoError) {
@@ -115,9 +115,7 @@ void HomePage::onImageDownloaded(QNetworkReply* reply)
     reply->deleteLater();
 }
 
-
-
-
+// Radio button slots
 void HomePage::on_radioButton_5_toggled(bool checked)
 {
     if (checked) {
@@ -125,7 +123,6 @@ void HomePage::on_radioButton_5_toggled(bool checked)
         this->setMaxResult(5);
     }
 }
-
 void HomePage::on_radioButton_10_toggled(bool checked)
 {
     if (checked) {
@@ -133,39 +130,41 @@ void HomePage::on_radioButton_10_toggled(bool checked)
          this->setMaxResult(10);
     }
 }
-
-
 void HomePage::on_radioButton_20_toggled(bool checked)
 {
     if (checked) {
-        qDebug() << "Radio button 20 toggled";
         this->setMaxResult(20);
     }
 }
-
-
 void HomePage::on_radioButton_30_toggled(bool checked)
 {
     if (checked) {
-        qDebug() << "Radio button 30 toggled";
         this->setMaxResult(30);
     }
 }
-
-
 void HomePage::on_radioButton_40_toggled(bool checked)
 {
     if (checked) {
-        qDebug() << "Radio button 40 toggled";
          this->setMaxResult(40);
     }
 }
+// Radio button slots end
 
+/**
+ * @brief Set the Max Result object
+ * 
+ * @param maxResult 
+ */
 void HomePage::setMaxResult(const int& maxResult)
 {
     this->maxResult = maxResult;
 }
 
+/**
+ * @brief Get the Max Result object
+ * 
+ * @return int 
+ */
 int HomePage::getMaxResult() const
 {
     return this->maxResult;

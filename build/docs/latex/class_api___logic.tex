@@ -1,5 +1,14 @@
 \hypertarget{class_api___logic}{}\doxysection{Api\+\_\+\+Logic Class Reference}
 \label{class_api___logic}\index{Api\_Logic@{Api\_Logic}}
+
+
+This class handles the api logic. It contains the api call function and the api reply handler function.  
+
+
+
+
+{\ttfamily \#include $<$api\+\_\+logic.\+h$>$}
+
 Inheritance diagram for Api\+\_\+\+Logic\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,21 +18,93 @@ Inheritance diagram for Api\+\_\+\+Logic\+:\begin{figure}[H]
 \doxysubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_api___logic_aaa2b7c56e2138220e5e4b670440eb566}\label{class_api___logic_aaa2b7c56e2138220e5e4b670440eb566}} 
-void {\bfseries make\+Api\+Call} (const QString \&query)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_api___logic_aaa2b7c56e2138220e5e4b670440eb566}{make\+Api\+Call}} (const QString \&query)
+\begin{DoxyCompactList}\small\item\em This function makes the api call to the google book api. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_api___logic_afb06c586f5fb6b9396feb407e2d521f3}\label{class_api___logic_afb06c586f5fb6b9396feb407e2d521f3}} 
-void {\bfseries api\+Response\+Received} (QString response)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_api___logic_afb06c586f5fb6b9396feb407e2d521f3}{api\+Response\+Received}} (QString response)
+\begin{DoxyCompactList}\small\item\em api\+Response\+Received Signal when api response is received \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api___logic_ac5d6721244b7f0ded4d9b3533735f81b}{api\+Error\+Occurred}} (QNetwork\+Reply\+::\+Network\+Error network\+Reply, const QString reply\+Error)
+\begin{DoxyCompactList}\small\item\em api\+Error\+Occurred \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_api___logic_a3a334a032f9e03026218295f8bfb4303}{Api\+\_\+\+Logic}} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_api___logic_a3a334a032f9e03026218295f8bfb4303}{Api\+\_\+\+Logic\+::\+Api\+\_\+\+Logic}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class handles the api logic. It contains the api call function and the api reply handler function. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_api___logic_a3a334a032f9e03026218295f8bfb4303}\label{class_api___logic_a3a334a032f9e03026218295f8bfb4303}} 
-{\bfseries Api\+\_\+\+Logic} (QObject $\ast$parent=nullptr)
-\end{DoxyCompactItemize}
+\index{Api\_Logic@{Api\_Logic}!Api\_Logic@{Api\_Logic}}
+\index{Api\_Logic@{Api\_Logic}!Api\_Logic@{Api\_Logic}}
+\doxysubsubsection{\texorpdfstring{Api\_Logic()}{Api\_Logic()}}
+{\footnotesize\ttfamily Api\+\_\+\+Logic\+::\+Api\+\_\+\+Logic (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_api___logic_a3a334a032f9e03026218295f8bfb4303}{Api\+\_\+\+Logic\+::\+Api\+\_\+\+Logic}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_api___logic_ac5d6721244b7f0ded4d9b3533735f81b}\label{class_api___logic_ac5d6721244b7f0ded4d9b3533735f81b}} 
+\index{Api\_Logic@{Api\_Logic}!apiErrorOccurred@{apiErrorOccurred}}
+\index{apiErrorOccurred@{apiErrorOccurred}!Api\_Logic@{Api\_Logic}}
+\doxysubsubsection{\texorpdfstring{apiErrorOccurred}{apiErrorOccurred}}
+{\footnotesize\ttfamily void Api\+\_\+\+Logic\+::api\+Error\+Occurred (\begin{DoxyParamCaption}\item[{QNetwork\+Reply\+::\+Network\+Error}]{network\+Reply,  }\item[{const QString}]{reply\+Error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+api\+Error\+Occurred 
+
+
+\begin{DoxyParams}{Parameters}
+{\em network\+Reply} & \\
+\hline
+{\em reply\+Error} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_api___logic_afb06c586f5fb6b9396feb407e2d521f3}\label{class_api___logic_afb06c586f5fb6b9396feb407e2d521f3}} 
+\index{Api\_Logic@{Api\_Logic}!apiResponseReceived@{apiResponseReceived}}
+\index{apiResponseReceived@{apiResponseReceived}!Api\_Logic@{Api\_Logic}}
+\doxysubsubsection{\texorpdfstring{apiResponseReceived}{apiResponseReceived}}
+{\footnotesize\ttfamily void Api\+\_\+\+Logic\+::api\+Response\+Received (\begin{DoxyParamCaption}\item[{QString}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+api\+Response\+Received Signal when api response is received 
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_api___logic_aaa2b7c56e2138220e5e4b670440eb566}\label{class_api___logic_aaa2b7c56e2138220e5e4b670440eb566}} 
+\index{Api\_Logic@{Api\_Logic}!makeApiCall@{makeApiCall}}
+\index{makeApiCall@{makeApiCall}!Api\_Logic@{Api\_Logic}}
+\doxysubsubsection{\texorpdfstring{makeApiCall}{makeApiCall}}
+{\footnotesize\ttfamily void Api\+\_\+\+Logic\+::make\+Api\+Call (\begin{DoxyParamCaption}\item[{const QString \&}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+This function makes the api call to the google book api. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & The query string for the api call. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

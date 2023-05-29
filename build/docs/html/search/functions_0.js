@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['gettitle_0',['getTitle',['../class_book.html#ac9ac170b1fdd039c52a5c3bbb476cf9a',1,'Book']]]
+  ['api_5flogic_0',['Api_Logic',['../class_api___logic.html#a3a334a032f9e03026218295f8bfb4303',1,'Api_Logic']]],
+  ['apierroroccurred_1',['apiErrorOccurred',['../class_api___logic.html#ac5d6721244b7f0ded4d9b3533735f81b',1,'Api_Logic']]],
+  ['apiparameters_2',['ApiParameters',['../class_api_parameters.html#a82e94f1241707f870aac91a02956d547',1,'ApiParameters']]],
+  ['apiresponsereceived_3',['apiResponseReceived',['../class_api___logic.html#afb06c586f5fb6b9396feb407e2d521f3',1,'Api_Logic']]]
 ];

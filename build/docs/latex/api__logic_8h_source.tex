@@ -4,33 +4,33 @@
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef API\_LOGIC\_H}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define API\_LOGIC\_H}}
 \DoxyCodeLine{3 }
-\DoxyCodeLine{4 }
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QObject>}}
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QString>}}
-\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QNetworkAccessManager>}}
-\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QNetworkReply>}}
-\DoxyCodeLine{9 }
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_api___logic}{Api\_Logic}} : \textcolor{keyword}{public} QObject}
-\DoxyCodeLine{12 \{}
-\DoxyCodeLine{13     Q\_OBJECT}
-\DoxyCodeLine{14 \textcolor{keyword}{public}:}
-\DoxyCodeLine{15     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_api___logic}{Api\_Logic}}(QObject *parent = \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{16 }
-\DoxyCodeLine{17 \textcolor{keyword}{public} slots:}
-\DoxyCodeLine{18     \textcolor{keywordtype}{void} makeApiCall(\textcolor{keyword}{const} QString\& query);}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <QString>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <QNetworkAccessManager>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <QNetworkReply>}}
 \DoxyCodeLine{19 }
-\DoxyCodeLine{20 signals:}
-\DoxyCodeLine{21     \textcolor{keywordtype}{void} apiResponseReceived(QString response);}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23 \textcolor{keyword}{private} slots:}
-\DoxyCodeLine{24     \textcolor{keywordtype}{void} handleApiReply(QNetworkReply *reply);}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26 \textcolor{keyword}{private}:}
-\DoxyCodeLine{27     QNetworkAccessManager *networkManager;}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29 \};}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// API\_LOGIC\_H}}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_api___logic}{Api\_Logic}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     Q\_OBJECT}
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_api___logic}{Api\_Logic}}(QObject *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_api___logic_aaa2b7c56e2138220e5e4b670440eb566}{makeApiCall}}(\textcolor{keyword}{const} QString\& query);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 signals:}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_api___logic_afb06c586f5fb6b9396feb407e2d521f3}{apiResponseReceived}}(QString response);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_api___logic_ac5d6721244b7f0ded4d9b3533735f81b}{apiErrorOccurred}}(QNetworkReply::NetworkError networkReply, \textcolor{keyword}{const} QString replyError );}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} handleApiReply(QNetworkReply *reply);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{private}:}
+\DoxyCodeLine{55     QNetworkAccessManager *networkManager;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// API\_LOGIC\_H}}
 
 \end{DoxyCode}

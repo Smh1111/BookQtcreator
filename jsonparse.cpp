@@ -6,7 +6,10 @@
 #include <QJsonParseError>
 #include <QDebug>
 
-
+/**
+ * @brief JsonParse::populateData parse the json data from Google Books API
+ * @param jsonArray
+ */
 void JsonParse::populateData(const QJsonArray& jsonArray)
 {
     for (const QJsonValue& value : jsonArray) {
@@ -93,9 +96,15 @@ void JsonParse::populateData(const QJsonArray& jsonArray)
         }
     }
 }
+
+/**
+ * @brief This function parses the json string and returns true if the json string is valid.
+ * 
+ * @param jsonData  The json string to be parsed 
+ */
 bool JsonParse::parseJson(const QString& jsonData)
 {
-    //qDebug() << "\n Jsonstring = " << jsonString;
+
     QJsonParseError error;
     QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonData.trimmed().toUtf8(), &error);
 
@@ -107,17 +116,11 @@ bool JsonParse::parseJson(const QString& jsonData)
 
     if (jsonDocument.isNull() || !jsonDocument.isObject()) {
         // Invalid JSON data
-
         qDebug() << "Invalid JSON data";
         return false;
     }
 
     QJsonObject jsonObject = jsonDocument.object();
-
-    qDebug() << "Keys = " << jsonObject.keys();
-
-
-    //processJson(jsonObject);
 
     QString kind = jsonObject.value("kind").toString();
     int totalItems = jsonObject.value("totalItems").toInt();
@@ -129,6 +132,11 @@ bool JsonParse::parseJson(const QString& jsonData)
     return true;
 }
 
+/**
+ * @brief This function  parses the json object and returns true if the json object is valid.
+ * 
+ * @param jsonObject The json object to be parsed 
+ */
 void JsonParse::processJson(const QJsonObject& jsonObject)
 {
 
@@ -145,6 +153,11 @@ void JsonParse::processJson(const QJsonObject& jsonObject)
     }
 }
 
+/**
+ * @brief This function parses the json array and returns true if the json array is valid.
+ * 
+ * @param jsonArray The json array to be parsed 
+ */
 void JsonParse::processJsonArray(const QJsonArray& jsonArray)
 {
     for (const QJsonValue& value : jsonArray) {
@@ -155,7 +168,10 @@ void JsonParse::processJsonArray(const QJsonArray& jsonArray)
         }
     }
 }
-
+/**
+ * @brief This function parses the key-value pair and returns true if the key-value pair is valid. Unfinished
+ * 
+ */
 // void JsonParse::processKeyValue(const QString& key, const QJsonValue& value)
 // {
 //     // Perform desired operations on the key-value pair dynamically
@@ -191,7 +207,11 @@ void JsonParse::processJsonArray(const QJsonArray& jsonArray)
 //     }
 //
 // }
-//
+
+/**
+ * @brief This function prints the data to the console.
+ * 
+ */
 void JsonParse::printData()
 {
     /*
@@ -218,6 +238,11 @@ pageCount
 
 }
 
+/**
+ * @brief This function returns the book list.
+ * 
+ * @return QList<Book> 
+ */
 QList<Book> JsonParse::getBookList()
 {
     return bookList;
