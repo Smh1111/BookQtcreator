@@ -16,6 +16,7 @@
 #include <QMainWindow>
 #include "book.h"
 #include <QGroupBox>
+#include "clickablelabel.h"
 namespace Ui {
 class SearchResultWindow;
 }

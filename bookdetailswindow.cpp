@@ -62,6 +62,32 @@ BookDetailsWindow::BookDetailsWindow(const Book &book, QWidget *parent) : QWidge
     QLabel *dateLabel = new QLabel("Published Date:", this);
     QLabel *descriptionLabel = new QLabel("Description:", this);
 
+    titleLabel->setStyleSheet("QLabel {"
+                              "color: #3AFE15;"
+                              "font-size: 15px;"
+                              "font-weight: bold;"
+                              "}");
+
+    isbnLabel->setStyleSheet("QLabel {"
+                             "color: #3AFE15;"
+                             "font-size: 15px;"
+                             "font-weight: bold;"
+                             "}");
+    authorsLabel->setStyleSheet("QLabel {"
+                                "color: #3AFE15;"
+                                "font-size: 15px;"
+                                "font-weight: bold;"
+                                "}");
+    dateLabel->setStyleSheet("QLabel {"
+                             "color: #3AFE15;"
+                             "font-size: 15px;"
+                             "font-weight: bold;"
+                             "}");
+    descriptionLabel->setStyleSheet("QLabel {"
+                                    "color: #3AFE15;"
+                                    "font-size: 15px;"
+                                    "font-weight: bold;"
+                                    "}");
 
     QLabel *titleValueLabel = new QLabel(book.getTitle(), this);
     QLabel *isbnValueLabel = new QLabel(book.getISBN(), this);
@@ -79,13 +105,14 @@ BookDetailsWindow::BookDetailsWindow(const Book &book, QWidget *parent) : QWidge
 
 
     // Create the link label
-    QLabel *infoLinkValueLabel = new QLabel("<a href=\"" + book.getInfoLink() + "\">More Info</a>");
+    QLabel *infoLinkValueLabel = new QLabel("<a href=\"" + book.getInfoLink() + "\" style='color: #FFEA00;'>More Info</a>");
 
     infoLinkValueLabel->setTextFormat(Qt::RichText);
     infoLinkValueLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
     infoLinkValueLabel->setOpenExternalLinks(true);
     infoLinkValueLabel->setStyleSheet("QLabel{"
                                       "color: #FF44CC"
+                                      "font-weight: bold"
                                       "}");
 
     //Styling bookdetailswindow
@@ -94,15 +121,13 @@ BookDetailsWindow::BookDetailsWindow(const Book &book, QWidget *parent) : QWidge
                         "}"
                         "QLabel{"
                         "color: white;"
-                        "font-family: Segoe UI;"
-                        "font-weight: bold;"
-                        "font-size: 14px;"
+                        "font-family: Lato;"
+                        "font-size: 15px;"
                         "}"
                         "QTextEdit{"
                         "color: white;"
-                        "font-family: Segoe UI;"
-                        "font-weight: bold;"
-                        "font-size: 14px;"
+                        "font-family: Lato;"
+                        "font-size: 15px;"
                         "}"
                         );
 
@@ -111,6 +136,7 @@ BookDetailsWindow::BookDetailsWindow(const Book &book, QWidget *parent) : QWidge
     groupBox->setStyleSheet( "QGroupBox {"
                             "border: 2px solid #08F7FE;"
                             "margin-top: 10px;"
+                            "border-radius: 10px;"
 
                             "}"
                             );

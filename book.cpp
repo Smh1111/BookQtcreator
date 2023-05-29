@@ -20,10 +20,11 @@ void Book::setDescription     (QString     description)
 {
     this->description = description;
 }
+
 /**
  * @brief set the authors of the book object to the given authors.
- * @param  authors
-*/
+ * @param authors   the authorlist
+ */
 void Book::setAuthors         (QStringList& authors)
 {
     this->authors = authors;
@@ -46,7 +47,6 @@ void Book::setPageCount       (int         pageCount)
 }
 /**
  * @brief set the image links of the book object to the given image links.
- * @param imageList
 */
 void Book::setImageLinks    (QStringList& imageList)
 {

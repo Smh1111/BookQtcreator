@@ -18,9 +18,8 @@ HomePage::HomePage(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("Book Finder App");
-    QIcon icon("../BookApp/icons8-book-64.ico"); 
+    QIcon icon("../BookApp/icons8-book-64.ico");
     setWindowIcon(icon);
-
 
     connect(ui->pushButtonSearch, &QPushButton::clicked, this, &HomePage::handleButtonClicked);
 
@@ -133,18 +132,21 @@ void HomePage::on_radioButton_10_toggled(bool checked)
 void HomePage::on_radioButton_20_toggled(bool checked)
 {
     if (checked) {
+         qDebug() << "Radio button 20 toggled";
         this->setMaxResult(20);
     }
 }
 void HomePage::on_radioButton_30_toggled(bool checked)
 {
     if (checked) {
+        qDebug() << "Radio button 30 toggled";
         this->setMaxResult(30);
     }
 }
 void HomePage::on_radioButton_40_toggled(bool checked)
 {
     if (checked) {
+        qDebug() << "Radio button 40 toggled";
          this->setMaxResult(40);
     }
 }

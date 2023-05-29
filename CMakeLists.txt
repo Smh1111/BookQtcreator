@@ -29,7 +29,20 @@ set(PROJECT_SOURCES
     searchresultwindow.h
     bookdetailswindow.h
     bookdetailswindow.cpp
+
+    clickablelabel.cpp
+    clickablelabel.h
+    icons8-book-64.ico
 )
+# Copy the icon file to the build directory
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/icons8-book-64.ico DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+# Add the icon file to the resource file
+set(RESOURCE_FILES resources.qrc)
+
+# Include the generated resource files in your executable
+qt6_add_resources(RESOURCE_SOURCES ${RESOURCE_FILES})
+
 
 # Find Doxygen package
 find_package(Doxygen)
@@ -64,13 +77,13 @@ set(TEST_SOURCES
     bookdetailswindow.cpp
 
     test/test_homePage.cpp
-    homepage.cpp
+    #homepage.cpp
 
     test/test_jsonParse.cpp
     jsonparse.cpp
 
     test/test_searchResultwindow.cpp
-    searchresultwindow.cpp
+    #searchresultwindow.cpp
 )
 
 # Create the test executable

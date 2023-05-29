@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['homepage_0',['HomePage',['../class_home_page.html',1,'']]]
+  ['clickablelabel_0',['ClickableLabel',['../class_clickable_label.html',1,'']]]
 ];

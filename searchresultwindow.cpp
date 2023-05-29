@@ -2,6 +2,7 @@
 #include "ui_searchresultwindow.h"
 #include "homepage.h"
 #include "bookdetailswindow.h"
+#include "clickablelabel.h"
 
 #include <QVBoxLayout>
 #include <QGroupBox>
@@ -14,6 +15,9 @@
 #include <QStyleOption>
 #include <QStylePainter>
 #include <QGraphicsDropShadowEffect>
+#include <QPixmap>
+#include <QFrame>
+
 
 /**
  * @brief Construct a new Search Result Window:: Search Result Window object
@@ -40,10 +44,11 @@ SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
     centralWidget->setStyleSheet("QWidget {background-color: #303030;}");
 
     // Create the "Home" button
-    QPushButton *homeButton = new QPushButton("Home", this);
-    homeButton->setStyleSheet("QPushButton { background-color: orange; color: black; font-weight: bold; font-size: 16px; padding: 7px; border-radius: 5px; }"
-                              "QPushButton:hover { background-color: lightgreen; }");
-    connect(homeButton, &QPushButton::clicked, this, &SearchResultWindow::goToHomePage);
+    //QPushButton *homeButton = new QPushButton("Home", this);
+    //homeButton->setStyleSheet("QPushButton { background-color: orange; color: black; font-weight: bold; font-size: 16px; padding: 7px; border-radius: 5px; }"
+    // "QPushButton:hover { background-color: lightgreen; }");
+    //connect(homeButton, &QPushButton::clicked, this, &SearchResultWindow::goToHomePage);
+
 
     QLabel *qLabel = new QLabel;
 
@@ -55,7 +60,25 @@ SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
     buttonLayout->addStretch();
     buttonLayout->addWidget(qLabel);
     buttonLayout->addSpacing(1400);
-    buttonLayout->addWidget(homeButton);
+    //buttonLayout->addWidget(homeButton);
+
+    // Create a new QWidget to hold the QLabel
+    QWidget* imageWidget = new QWidget(this);
+
+
+    QPixmap pixmap("../BookApp/home_logo.png");
+    QSize size(40, 30);  // Set the desired size for the logo
+    QPixmap scaledPixmap = pixmap.scaled(size, Qt::KeepAspectRatio);
+    ClickableLabel* imageLabel = new ClickableLabel(imageWidget);
+    imageLabel->setPixmap(scaledPixmap);
+
+    connect(imageLabel, &ClickableLabel::clicked, this, &SearchResultWindow::goToHomePage);
+
+    // Add the QLabel to the layout
+    buttonLayout->addWidget(imageLabel);
+
+
+
 
     // Create the scroll area
     QScrollArea *scrollArea = new QScrollArea(this);
@@ -135,6 +158,7 @@ QPixmap SearchResultWindow::loadImageFromUrl(const QString& imageUrl)
 
 QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
 {
+
     // Create the group box for the book
     QGroupBox* groupBox = new QGroupBox;
     groupBox->setStyleSheet( "QGroupBox {"
@@ -144,51 +168,75 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
 
                             "}"
                             );
+
+    // Create a QFrame to hold the group box
+    /*QFrame* frame = new QFrame;
+    frame->setFrameStyle(QFrame::Panel | QFrame::Raised);
+    frame->setLineWidth(2);
+    frame->setStyleSheet("QFrame {"
+                         "    background-color: transparent;"
+                         "}");
+
+    // Create a QVBoxLayout for the frame
+    QVBoxLayout* frameLayout = new QVBoxLayout(frame);
+    frameLayout->setContentsMargins(0, 0, 0, 0);
+    frameLayout->addWidget(groupBox);
+
+
     // Create a QGraphicsDropShadowEffect for the shadow effect
     QGraphicsDropShadowEffect* shadowEffect = new QGraphicsDropShadowEffect;
     shadowEffect->setColor(Qt::black);
     shadowEffect->setBlurRadius(20);
     shadowEffect->setOffset(0, 0);
 
-    // Apply the shadow effect to the group box
-    groupBox->setGraphicsEffect(shadowEffect);
+    // Apply the shadow effect to the frame
+    frame->setGraphicsEffect(shadowEffect);*/
 
+    // Create a QGraphicsDropShadowEffect for the shadow effect
+    QGraphicsDropShadowEffect* shadowEffect = new QGraphicsDropShadowEffect;
+    shadowEffect->setColor(Qt::black);
+    shadowEffect->setBlurRadius(20);
+    shadowEffect->setOffset(0, 0);
+
+    groupBox->setGraphicsEffect(shadowEffect);
 
     // Create the layout for the group box
     QHBoxLayout* layout = new QHBoxLayout(groupBox);
     layout->setContentsMargins(20, 20, 20, 20);
     layout->setSpacing(10);
 
+
+
     // Create the book image
     QPixmap bookImage = loadImageFromUrl(book.getImageUrl());
 
     // Create the label to display the book image
-    QLabel* imageLabel = new QLabel;
-    imageLabel->setPixmap(bookImage.scaledToWidth(200));
+    ClickableLabel* imageLabelForBookCard = new ClickableLabel;
+    imageLabelForBookCard->setPixmap(bookImage.scaledToWidth(200));
 
-    imageLabel->setAlignment(Qt::AlignCenter);
-    imageLabel->setStyleSheet("QLabel { border: none; }"); // Remove the stylesheet for the image label
+    imageLabelForBookCard->setAlignment(Qt::AlignCenter);
+    imageLabelForBookCard->setStyleSheet("QLabel { border: none; }"); // Remove the stylesheet for the image label
 
     // Connect the read more button signal to the slot
-    // connect(imageLabel, &QLabel::clicked, [this, book]() {
-    //openBookDetailsWindow(book);
-    //});
+    connect(imageLabelForBookCard, &ClickableLabel::clicked, [this, book]() {
+        openBookDetailsWindow(book);
+    });
 
     // Add the image label to the layout
-    layout->addWidget(imageLabel);
+    layout->addWidget(imageLabelForBookCard);
 
     // Create the book details layout
     QVBoxLayout* detailsLayout = new QVBoxLayout;
 
     // Create the book details labels
-    QLabel* titleLabel = new QLabel("<span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>Title: </span> <span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>"
+    QLabel* titleLabel = new QLabel("<span style='font-family: Lato; font-weight: bold; font-size: 15px; color: #3AFE15;'>Title: </span> <span style='font-family: Lato;  font-size: 15px; color: white;'>"
                                     + book.getTitle()
                                     + " </span>");
     titleLabel->setStyleSheet("QLabel {"
                               "   padding: 10px;"
                               "    border: none;");
 
-    QLabel* isbnLabel = new QLabel("<span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>ISBN: </span> <span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>"
+    QLabel* isbnLabel = new QLabel("<span style='font-family: Lato; font-weight: bold; font-size: 15px; color: #3AFE15;'>ISBN: </span> <span style='font-family: Lato;  font-size: 15px; color: white;'>"
                                    + book.getISBN()
                                    + " </span>");
     isbnLabel->setStyleSheet("QLabel {"
@@ -196,7 +244,7 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
                              "    border: none;");
 
 
-    QLabel* authorsLabel = new QLabel("<span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>Authors: </span>  <span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>"
+    QLabel* authorsLabel = new QLabel("<span style='font-family: Lato; font-weight: bold; font-size: 15px; color: #3AFE15;'>Authors: </span>  <span style='font-family: Lato;  font-size: 15px; color: white;'>"
                                       + book.getAuthors().join(", ")
                                       + " </span>");
     authorsLabel->setStyleSheet("QLabel {"
@@ -205,7 +253,7 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
                                 );
 
 
-    QLabel* publishedLabel = new QLabel("<span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>Published Date: </span> <span style='font-family: Segoe UI; font-weight: bold; font-size: 18px; color: white;'>("
+    QLabel* publishedLabel = new QLabel("<span style='font-family: Lato; font-weight: bold; font-size: 15px; color: #3AFE15;'>Published Date: </span> <span style='font-family: Lato;  font-size: 15px; color: white;'>("
                                         + book.getPublishedDate()
                                         + ") </span>");
     publishedLabel->setStyleSheet("QLabel {"
@@ -219,17 +267,18 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
 
     // Set the button's style using CSS
     readMoreButton->setStyleSheet("QPushButton {"
-                                  "    background-color: orange;"  // White background
-                                  "    color: #000000;"  // Black text color
+
+                                  "    color: white;"  // Black text color
                                   "    font-weight: bold;"
-                                  "    padding: 10px 10px;"
-                                  "    border-radius: 13px;"
-                                  "    border: none;"
-                                  "    outline: none;"
+                                  "    padding: 7px 7px;"
+                                  "    border-radius: 10px ;"
+                                  "    border: 2px solid #08F7FE;"
+
                                   "    text-transform: uppercase;"
                                   "}"
                                   "QPushButton:hover {"
-                                  "    background-color: lightgreen;"  // Lighter background on hover
+                                  "    background-color: white;"  // Lighter background on hover
+                                  "    color:black;"
                                   "}"
                                   "QPushButton:pressed {"
                                   "    background-color: #d3d3d3;"  // Even darker background when pressed
@@ -271,6 +320,7 @@ QGroupBox* SearchResultWindow::createBookGroupBox(const Book& book)
 
     return groupBox;
 }
+
 
 
 /**

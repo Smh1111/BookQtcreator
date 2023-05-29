@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['testbook_0',['TestBook',['../class_test_book.html',1,'']]]
+  ['searchresultwindow_0',['SearchResultWindow',['../class_search_result_window.html',1,'']]]
 ];
