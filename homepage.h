@@ -71,7 +71,6 @@ private slots:
     
     void setMaxResult(const int& maxResult);
     int getMaxResult() const;
-
 private:
     Ui::HomePage *ui;
     QPushButton *button;

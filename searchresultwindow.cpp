@@ -17,7 +17,7 @@
 #include <QGraphicsDropShadowEffect>
 #include <QPixmap>
 #include <QFrame>
-
+#include <QCoreApplication>
 
 /**
  * @brief Construct a new Search Result Window:: Search Result Window object
@@ -65,20 +65,53 @@ SearchResultWindow::SearchResultWindow(QWidget *parent, QList<Book> data) :
     // Create a new QWidget to hold the QLabel
     QWidget* imageWidget = new QWidget(this);
 
+    QString appDirPath = QCoreApplication::applicationDirPath();
+    QString filePath    = appDirPath + "/home.png";
+    QPixmap pixmap(filePath);
+    QPushButton* homeButton = new QPushButton("Home");
+    if (pixmap.isNull())
+    {
 
-    QPixmap pixmap("../BookApp/home_logo.png");
-    QSize size(40, 30);  // Set the desired size for the logo
-    QPixmap scaledPixmap = pixmap.scaled(size, Qt::KeepAspectRatio);
-    ClickableLabel* imageLabel = new ClickableLabel(imageWidget);
-    imageLabel->setPixmap(scaledPixmap);
+        homeButton->setFixedSize(100, 30);
 
-    connect(imageLabel, &ClickableLabel::clicked, this, &SearchResultWindow::goToHomePage);
+        // Set the button's style using CSS
+        homeButton->setStyleSheet("QPushButton {"
 
-    // Add the QLabel to the layout
-    buttonLayout->addWidget(imageLabel);
+                                  "    color: white;"  // Black text color
+                                  "    font-weight: bold;"
+                                  "    padding: 7px 7px;"
+                                  "    border-radius: 10px ;"
+                                  "    border: 2px solid #08F7FE;"
+
+                                  "    text-transform: uppercase;"
+                                  "}"
+                                  "QPushButton:hover {"
+                                  "    background-color: white;"  // Lighter background on hover
+                                  "    color:black;"
+                                  "}"
+                                  "QPushButton:pressed {"
+                                  "    background-color: #d3d3d3;"  // Even darker background when pressed
+                                  "}");
 
 
+        // Connect the read more button signal to the slot
+        connect(homeButton, &QPushButton::clicked, this, &SearchResultWindow::goToHomePage);
+        buttonLayout->addWidget(homeButton);
+    }
 
+    else
+    {
+        delete homeButton;
+        QSize size(40, 30);  // Set the desired size for the logo
+        QPixmap scaledPixmap = pixmap.scaled(size, Qt::KeepAspectRatio);
+        ClickableLabel* imageLabel = new ClickableLabel(imageWidget);
+        imageLabel->setPixmap(scaledPixmap);
+
+        connect(imageLabel, &ClickableLabel::clicked, this, &SearchResultWindow::goToHomePage);
+
+        // Add the QLabel to the layout
+        buttonLayout->addWidget(imageLabel);
+    }
 
     // Create the scroll area
     QScrollArea *scrollArea = new QScrollArea(this);

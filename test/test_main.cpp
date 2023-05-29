@@ -10,29 +10,25 @@
 #include "test_jsonParse.h"
 #include "test_searchResultwindow.h"
 
-
 int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
     // Run all the tests silently
-    int status = 0;
 
-    qDebug() << "";
-    status |= QTest::qExec(new TestApiLogic, argc, argv);
 
-    qDebug() << "";
-    qDebug() << "";
 
-    status |= QTest::qExec(new TestBook, argc, argv);
+    QTest::qExec(new TestApiLogic, argc, argv);
 
-    qDebug() << "";
-    qDebug() << "";
 
-    status |= QTest::qExec(new TestApiParameters, argc, argv);
 
-    qDebug() << "";
-    qDebug() << "";
+    QTest::qExec(new TestBook, argc, argv);
+
+
+
+    QTest::qExec(new TestApiParameters, argc, argv);
+
+
 
     // status |= QTest::qExec(new TestBookDetailsWindow, argc, argv);
     // qDebug() << "";
@@ -43,14 +39,14 @@ int main(int argc, char *argv[])
     // qDebug() << "";
     // qDebug() << "";
 
-    status |= QTest::qExec(new TestJsonParse, argc, argv);
+    QTest::qExec(new TestJsonParse, argc, argv);
 
-    qDebug() << "";
-    qDebug() << "";
 
     // status |= QTest::qExec(new TestSearchResultWindow, argc, argv);
     //
     // qDebug() << "";
     // qDebug() << "";
-    return status;
+
+    system("pause");
+    return 0;
 }

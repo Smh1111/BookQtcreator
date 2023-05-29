@@ -10,7 +10,7 @@
 #include <QImage>
 #include <QStandardPaths>
 #include <QRadioButton>
-
+#include <QIcon>
 
 HomePage::HomePage(QWidget *parent)
     : QMainWindow(parent)
@@ -18,8 +18,39 @@ HomePage::HomePage(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("Book Finder App");
-    QIcon icon("../BookApp/icons8-book-64.ico");
-    setWindowIcon(icon);
+    QIcon icon("./icons8-book-64.ico");
+    if (icon.isNull())
+    {
+        QNetworkAccessManager manager;
+
+        // Create a network request for the icon URL
+        QNetworkRequest request(QUrl("https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"));
+
+        // Send the network request
+        QNetworkReply* reply = manager.get(request);
+
+        // Connect the signal for the download completion
+        QObject::connect(reply, &QNetworkReply::finished, [&]() {
+            // Check if the download was successful
+            if (reply->error() == QNetworkReply::NoError) {
+                // Read the downloaded data as a QPixmap
+                QPixmap pixmap;
+                pixmap.loadFromData(reply->readAll());
+
+                // Create a QIcon from the downloaded pixmap
+                QIcon windowIcon(pixmap);
+                setWindowIcon(windowIcon);
+            }
+
+            // Clean up
+            reply->deleteLater();
+        });
+    }
+    else
+    {
+        setWindowIcon(icon);
+
+    }
 
     connect(ui->pushButtonSearch, &QPushButton::clicked, this, &HomePage::handleButtonClicked);
 
@@ -113,6 +144,7 @@ void HomePage::onImageDownloaded(QNetworkReply* reply)
     // Clean up the reply object
     reply->deleteLater();
 }
+
 
 // Radio button slots
 void HomePage::on_radioButton_5_toggled(bool checked)

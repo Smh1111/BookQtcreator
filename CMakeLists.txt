@@ -33,6 +33,7 @@ set(PROJECT_SOURCES
     clickablelabel.cpp
     clickablelabel.h
     icons8-book-64.ico
+    home_logo.png
 )
 # Copy the icon file to the build directory
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/icons8-book-64.ico DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
