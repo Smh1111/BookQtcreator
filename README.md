@@ -2,6 +2,7 @@
 
 An individual project for 01286131 Object-oriented Programming KMITL
 Software Engineering Program, Year 1, Semester 2
+[Link Text](Final_Project_Report.pdf)
 
 ## Table of Contents
 
