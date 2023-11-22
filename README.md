@@ -8,7 +8,7 @@ Software Engineering Program, Year 1, Semester 2
 - [Introduction](#introduction)
 - [Logic](#logic)
 - [Class-Diagram](#class-diagram)
-- [License](#license)
+- [Features](#features)
 
 ## Introduction
 
@@ -27,6 +27,28 @@ This application aims to simplify the process of finding and exploring books by 
 
 ![Alt text](<Screenshot 2566-11-23 at 01.54.09.png>) ![Alt text](<Screenshot 2566-11-23 at 01.54.04.png>)
 
-## License
+## Features
 
-Information about the license for your project.
+1. Home page
+
+This is the main page a user will see in the app. He can choose options from "5" to "40" to generate a list of books.
+![Alt text](image.png)
+
+After submitting any info he could find about the book, now the app will fetch connect to Google books api in the background and fetch the data about the book he wanted to find.
+
+2. Results page
+
+If he chose "5" option, he will now get 5 results of similar books from the info he provided.
+![Alt text](image-2.png)
+
+He wanted to know more about a book from those results, he can click "Read More" button.
+
+3. Info of a specific book
+
+This window will give some detailed information about the book, for eg. title, authors, ISBN, and description. 
+![Alt text](image-3.png)
+
+If he stills wants to know more about this book and needs more details, he can click "More info" button and he will be redirected with a link on browser for that book on Google Publisher website.
+
+![Alt text](image-4.png)
+
