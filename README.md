@@ -1,25 +1,31 @@
-# Project Name
+# BookQt Creator
 
-A brief description of your project.
+An individual project for 01286131 Object-oriented Programming KMITL
+Software Engineering Program, Year 1, Semester 2
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
+- [Introduction](#introduction)
+- [Logic](#logic)
+- [Class-Diagram](#class-diagram)
 - [License](#license)
 
-## Installation
+## Introduction
 
-Instructions on how to install and set up your project.
 
-## Usage
+The BookFinder App is a powerful tool that uses the Google Books API and C++ Qt Framework to allow users browse information about books by Query parameters such as limit, title, latest. 
 
-Instructions on how to use your project and any relevant examples.
+This application aims to simplify the process of finding and exploring books by providing users with a seamless and intuitive search experience.
 
-## Contributing
 
-Guidelines on how others can contribute to your project.
+
+## Logic
+
+![Alt text](image-1.png)
+
+## Class-Diagram
+
+![Alt text](<Screenshot 2566-11-23 at 01.54.09.png>) ![Alt text](<Screenshot 2566-11-23 at 01.54.04.png>)
 
 ## License
 
