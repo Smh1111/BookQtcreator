@@ -1,6 +1,6 @@
 # BookQt Creator
 
-An individual project for 01286131 Object-oriented Programming KMITL
+C++ object-oriented project for 01286131 Object-oriented Programming KMITL
 Software Engineering Program, Year 1, Semester 2
 
 If you want to see the details in pdf, here is [pdf file](/Final_Project_Report.pdf)
