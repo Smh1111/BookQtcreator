@@ -31,21 +31,21 @@ This application aims to simplify the process of finding and exploring books by 
 
 ## Features
 
-## 1-Home-Page
+## 1.Home-Page
 
 This is the main page a user will see in the app. He can choose options from "5" to "40" to generate a list of books.
 ![Alt text](image.png)
 
 After submitting any info he could find about the book, now the app will fetch connect to Google books api in the background and fetch the data about the book he wanted to find.
 
-## 2-Results-Page
+## 2.Results-Page
 
 If he chose "5" option, he will now get 5 results of similar books from the info he provided.
 ![Alt text](image-2.png)
 
 He wanted to know more about a book from those results, he can click "Read More" button.
 
-## 3-Details
+## 3.Details
 
 This window will give some detailed information about the book, for eg. title, authors, ISBN, and description. 
 ![Alt text](image-3.png)
